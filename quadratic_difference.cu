@@ -52,13 +52,17 @@ __global__ void quadratic_difference(int8_t *correlations, int N, int sliding_wi
 
 #define USE_READ_ONLY_CACHE read_only
 #if USE_READ_ONLY_CACHE == 1
-#define LDG(x) __ldg(x)
+#define LDG(x, y) __ldg(x+y)
 #elif USE_READ_ONLY_CACHE == 0
-#define LDG(x) *(x)
+#define LDG(x, y) x[y]
 #endif
 
 
-
+/*
+ * This kernel uses the usual set of optimizations, including tiling, partial loop unrolling, read-only cache. 
+ * Tuning parameters supported are 'read_only' [0,1], 'tile_size_x' divisor of 1500, and 'block_size_x' multiple of 32.
+ *
+ */
 __global__ void quadratic_difference_linear(char *__restrict__ correlations, int N, int sliding_window_width,
         const float *__restrict__ x, const float *__restrict__ y, const float *__restrict__ z, const float *__restrict__ ct) {
 
@@ -75,10 +79,10 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
         //the loading phase
         for (int k=tx; k < block_size_x*tile_size_x+window_width-1; k+=block_size_x) {
             if (bx+k < N) {
-                sh_ct[k] = LDG(ct+bx+k);
-                sh_x[k] = LDG(x+bx+k);
-                sh_y[k] = LDG(y+bx+k);
-                sh_z[k] = LDG(z+bx+k);
+                sh_ct[k] = LDG(ct,bx+k);
+                sh_x[k] = LDG(x,bx+k);
+                sh_y[k] = LDG(y,bx+k);
+                sh_z[k] = LDG(z,bx+k);
             }
         }
         __syncthreads();
@@ -190,6 +194,214 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
 
     }
 }
+
+
+
+
+/*
+ * This kernel uses warp-shuffle instructions to re-use many of
+ * the input values in registers and reduce the pressure on shared memory.
+ * However, it does this so drastically that shared memory is hardly needed anymore.
+ *
+ * Tuning parameters supported are 'block_size_x', 'shem' [0,1], 'read_only' [0,1], 'use_if' [0,1]
+ *
+ */
+__global__ void quadratic_difference_linear_shfl(char *__restrict__ correlations, int N, int sliding_window_width,
+        const float *__restrict__ x, const float *__restrict__ y, const float *__restrict__ z, const float *__restrict__ ct) {
+
+    int tx = threadIdx.x;
+    int bx = blockIdx.x * block_size_x;
+
+    #if shmem == 1
+    __shared__ float sh_ct[block_size_x + window_width -1];
+    __shared__ float sh_x[block_size_x + window_width -1];
+    __shared__ float sh_y[block_size_x + window_width -1];
+    __shared__ float sh_z[block_size_x + window_width -1];
+    #endif
+
+    if (bx+tx < N) {
+
+        //the loading phase
+        #if shmem == 1
+        for (int k=tx; k < block_size_x+window_width-1; k+=block_size_x) {
+            if (bx+k < N) {
+                sh_ct[k] = ct[bx+k];
+                sh_x[k] = x[bx+k];
+                sh_y[k] = y[bx+k];
+                sh_z[k] = z[bx+k];
+            }
+        }
+        __syncthreads();
+        #endif
+
+        //start of the the computations phase
+        #if shmem == 1
+        int i = tx;
+        float ct_i = sh_ct[i];
+        float x_i = sh_x[i];
+        float y_i = sh_y[i];
+        float z_i = sh_z[i];
+        #elif shmem == 0
+        int i = bx + tx;
+        float ct_i = LDG(ct,i);
+        float x_i = LDG(x,i);
+        float y_i = LDG(y,i);
+        float z_i = LDG(z,i);
+        #endif
+
+        //small optimization to eliminate bounds checks for most blocks
+        //if (bx+block_size_x+window_width-1 < N) {
+
+            int laneid = tx & (32-1);
+
+            for (int j=0; j < 32-laneid; j++) {
+
+                #if shmem == 1
+                float diffct = ct_i - sh_ct[i+j];
+                float diffx  = x_i - sh_x[i+j];
+                float diffy  = y_i - sh_y[i+j];
+                float diffz  = z_i - sh_z[i+j];
+                uint64_t pos = j * ((uint64_t)N) + (bx+i);
+                #elif shmem == 0
+                float diffct = ct_i - LDG(ct,i+j);
+                float diffx = x_i - LDG(x,i+j);
+                float diffy = y_i - LDG(y,i+j);
+                float diffz = z_i - LDG(z,i+j);
+                uint64_t pos = j * ((uint64_t)N) + (i);
+                #endif
+
+                #if use_if == 1
+                if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                    correlations[pos] = 1;
+                }
+                #elif use_if == 0
+                correlations[pos] = (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz);
+                #endif
+
+            }
+
+            int j;
+
+                
+            #if f_unroll == 2
+            #pragma unroll 2
+            #elif f_unroll == 4
+            #pragma unroll 4
+            #endif
+            for (j=32; j < window_width-32; j+=32) {
+
+                #if shmem == 1
+                float ct_j = sh_ct[i+j];
+                float x_j = sh_x[i+j];
+                float y_j = sh_y[i+j];
+                float z_j = sh_z[i+j];
+                #elif shmem == 0
+                float ct_j = LDG(ct,i+j);
+                float x_j = LDG(x,i+j);
+                float y_j = LDG(y,i+j);
+                float z_j = LDG(z,i+j);
+                #endif
+
+                for (int d=1; d<33; d++) {
+                    ct_j = __shfl(ct_j, laneid+1);
+                    x_j = __shfl(x_j, laneid+1);
+                    y_j = __shfl(y_j, laneid+1);
+                    z_j = __shfl(z_j, laneid+1);
+
+                    float diffct = ct_i - ct_j;
+                    float diffx  = x_i - x_j;
+                    float diffy  = y_i - y_j;
+                    float diffz  = z_i - z_j;
+
+                    int c = laneid+d > 31 ? -32 : 0;
+
+                    #if shmem == 1
+                    uint64_t pos = (j+d+c) * ((uint64_t)N) + (bx+i);
+                    #elif shmem == 0
+                    uint64_t pos = (j+d+c) * ((uint64_t)N) + (i);
+                    #endif
+
+                    #if use_if == 1
+                    if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                        correlations[pos] = 1;
+                    }
+                    #elif use_if == 0
+                    correlations[pos] = (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz);
+                    #endif
+
+                }
+
+            }
+
+
+            j-=laneid;
+            for (; j < window_width; j++) {
+
+                #if shmem == 1
+                float diffct = ct_i - sh_ct[i+j];
+                float diffx  = x_i - sh_x[i+j];
+                float diffy  = y_i - sh_y[i+j];
+                float diffz  = z_i - sh_z[i+j];
+                uint64_t pos = j * ((uint64_t)N) + (bx+i);
+                #elif shmem == 0
+                float diffct = ct_i - LDG(ct,i+j);
+                float diffx = x_i - LDG(x,i+j);
+                float diffy = y_i - LDG(y,i+j);
+                float diffz = z_i - LDG(z,i+j);
+                uint64_t pos = j * ((uint64_t)N) + (i);
+                #endif
+
+                #if use_if == 1
+                if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                    correlations[pos] = 1;
+                }
+                #elif use_if == 0
+                correlations[pos] = (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz);
+                #endif
+
+
+            }
+
+
+/*
+        }
+        //same as above but with bounds checks for last few blocks
+        else {
+
+            for (int j=0; j < window_width; j++) {
+
+                if (bx+i+j >= N) { return; }
+
+                float diffct = ct_i - sh_ct[i+j];
+                float diffx  = x_i - sh_x[i+j];
+                float diffy  = y_i - sh_y[i+j];
+                float diffz  = z_i - sh_z[i+j];
+
+                uint64_t pos = j * ((uint64_t)N) + (bx+i);
+                if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                    correlations[pos] = 1;
+                }
+
+            }
+
+        }
+*/
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -52,49 +52,60 @@ result = [result[0], None, None, None, None, None, None]
 
 
 
-#now tune my the quadratic_difference_linear kernel
+#now tune the quadratic_difference_linear kernel
+kernel_name = "quadratic_difference_linear"
+
 
 problem_size = (int(N), 1)
 
 tune_params = dict()
-tune_params["block_size_x"] = [32*i for i in range(1,33)]
-tune_params["use_if"] = [1]
-tune_params["tile_size_x"] = [1, 2, 4, 8, 16]
-tune_params["f_unroll"] = [i for i in range(1,20) if 1500/float(i) == 1500/i]
-tune_params["read_only"] = [0, 1]
-
-grid_div_x = ["block_size_x", "tile_size_x"]
-#grid_div_x = ["block_size_x"]
-
-params = dict()
-params["block_size_x"] = 32
-params["use_if"] = 1
-params["tile_size_x"] = 2
-
-result2 = run_kernel("quadratic_difference_linear", kernel_string, problem_size, args, params,
-    grid_div_x=grid_div_x)
+tune_params["block_size_x"] = [32*i for i in range(1,33)] #multiples of 32
+tune_params["f_unroll"] = [i for i in range(1,20) if 1500/float(i) == 1500//i] #divisors of 1500
+tune_params["tile_size_x"] = [2**i for i in range(5)] #powers of 2
 
 
-print ("hits ", np.sum(result[0]), np.sum(result2[0]) )
+#tune_params["block_size_x"] = [2**i for i in range(7,11)]
+#tune_params["tile_size_x"] = [1, 2, 4, 8, 16]
+#tune_params["shmem"] = [0, 1]
+#tune_params["read_only"] = [0]
+#tune_params["use_if"] = [1]
+
+if "tile_size_x" in tune_params:
+    grid_div_x = ["block_size_x", "tile_size_x"]
+else:
+    grid_div_x = ["block_size_x"]
+
+
 
 #set False here to True to visually compare the output of both kernels
 if False:
+    params = dict()
+    params["block_size_x"] = 32
+    params["use_if"] = 1
+    params["tile_size_x"] = 2
+    result2 = run_kernel(kernel_name, kernel_string, problem_size, args, params,
+        grid_div_x=grid_div_x)
+
+    print ("hits ", np.sum(result[0]), np.sum(result2[0]) )
+
     from matplotlib import pyplot
     corr1 = result[0].reshape(1500, N)
     corr2 = result2[0].reshape(1500, N)
-    f, (ax1, ax2) = pyplot.subplots(nrows=2, ncols=1, sharex=True, sharey=True)
+    f, (ax1, ax2, ax3) = pyplot.subplots(nrows=3, ncols=1, sharex=True, sharey=True)
     ax1.imshow(corr1, cmap=pyplot.cm.bone)
     ax2.imshow(corr2, cmap=pyplot.cm.bone)
+    ax3.imshow(corr2-corr1, cmap=pyplot.cm.jet)
     pyplot.show()
+
 
 
 
 
 #because of a bug in PyCuda we can't automatically verify the result of arrays larger than 2**32
 if correlations.nbytes > 2**32:
-    tune_kernel("quadratic_difference_linear", kernel_string, problem_size, args, tune_params,
+    tune_kernel(kernel_name, kernel_string, problem_size, args, tune_params,
         grid_div_x=grid_div_x, verbose=True)
 else:
-    tune_kernel("quadratic_difference_linear", kernel_string, problem_size, args, tune_params,
+    tune_kernel(kernel_name, kernel_string, problem_size, args, tune_params,
         grid_div_x=grid_div_x, answer=result, verbose=True)
 
