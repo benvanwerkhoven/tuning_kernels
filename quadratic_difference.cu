@@ -46,9 +46,158 @@ __global__ void quadratic_difference(int8_t *correlations, int N, int sliding_wi
 }
 
 
+#ifndef tile_size_x
+#define tile_size_x 1
+#endif
+
+#define USE_READ_ONLY_CACHE read_only
+#if USE_READ_ONLY_CACHE == 1
+#define LDG(x) __ldg(x)
+#elif USE_READ_ONLY_CACHE == 0
+#define LDG(x) *(x)
+#endif
 
 
-__global__ void quadratic_difference_linear(char *correlations, int N, int sliding_window_width, float *x, float *y, float *z, float *ct) {
+
+__global__ void quadratic_difference_linear(char *__restrict__ correlations, int N, int sliding_window_width,
+        const float *__restrict__ x, const float *__restrict__ y, const float *__restrict__ z, const float *__restrict__ ct) {
+
+    int tx = threadIdx.x;
+    int bx = blockIdx.x * block_size_x * tile_size_x;
+
+    __shared__ float sh_ct[block_size_x * tile_size_x + window_width];
+    __shared__ float sh_x[block_size_x * tile_size_x + window_width];
+    __shared__ float sh_y[block_size_x * tile_size_x + window_width];
+    __shared__ float sh_z[block_size_x * tile_size_x + window_width];
+
+    if (bx+tx < N) {
+
+        //the loading phase
+        for (int k=tx; k < block_size_x*tile_size_x+window_width-1; k+=block_size_x) {
+            if (bx+k < N) {
+                sh_ct[k] = LDG(ct+bx+k);
+                sh_x[k] = LDG(x+bx+k);
+                sh_y[k] = LDG(y+bx+k);
+                sh_z[k] = LDG(z+bx+k);
+            }
+        }
+        __syncthreads();
+
+        //start of the the computations phase
+        int i = tx;
+        float l_ct[tile_size_x];
+        float l_x[tile_size_x];
+        float l_y[tile_size_x];
+        float l_z[tile_size_x];
+
+        //keep the most often used values in registers
+        for (int ti=0; ti<tile_size_x; ti++) {
+            l_ct[ti] = sh_ct[i+ti*block_size_x];
+            l_x[ti] = sh_x[i+ti*block_size_x];
+            l_y[ti] = sh_y[i+ti*block_size_x];
+            l_z[ti] = sh_z[i+ti*block_size_x];
+        }
+
+        //small optimization to eliminate bounds checks for most blocks
+        if (bx+block_size_x*tile_size_x+window_width-1 < N) {
+
+            //unfortunately there's no better way to do this right now
+            //[1, 2, 3, 4, 5, 6, 10, 12, 15]
+            #if f_unroll == 2
+            #pragma unroll 2
+            #elif f_unroll == 3
+            #pragma unroll 3
+            #elif f_unroll == 4
+            #pragma unroll 4
+            #elif f_unroll == 5
+            #pragma unroll 5
+            #elif f_unroll == 6
+            #pragma unroll 6
+            #elif f_unroll == 10
+            #pragma unroll 10
+            #elif f_unroll == 12
+            #pragma unroll 12
+            #elif f_unroll == 15
+            #pragma unroll 15
+            #endif            
+            for (int j=0; j < window_width; j++) {
+
+                #pragma unroll
+                for (int ti=0; ti<tile_size_x; ti++) {
+
+                        float diffct = l_ct[ti] - sh_ct[i+ti*block_size_x+j];
+                        float diffx  = l_x[ti] - sh_x[i+ti*block_size_x+j];
+                        float diffy  = l_y[ti] - sh_y[i+ti*block_size_x+j];
+                        float diffz  = l_z[ti] - sh_z[i+ti*block_size_x+j];
+
+                        uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
+                        if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                            correlations[pos] = 1;
+                        }
+
+                }
+
+            }
+
+        }
+        //same as above but with bounds checks for last few blocks
+        else {
+
+            //unfortunately there's no better way to do this right now
+            //[1, 2, 3, 4, 5, 6, 10, 12, 15]
+            #if f_unroll == 2
+            #pragma unroll 2
+            #elif f_unroll == 3
+            #pragma unroll 3
+            #elif f_unroll == 4
+            #pragma unroll 4
+            #elif f_unroll == 5
+            #pragma unroll 5
+            #elif f_unroll == 6
+            #pragma unroll 6
+            #elif f_unroll == 10
+            #pragma unroll 10
+            #elif f_unroll == 12
+            #pragma unroll 12
+            #elif f_unroll == 15
+            #pragma unroll 15
+            #endif            
+            for (int j=0; j < window_width; j++) {
+
+                for (int ti=0; ti<tile_size_x; ti++) {
+
+                    if (bx+i+ti*block_size_x+j < N) {
+
+                        float diffct = l_ct[ti] - sh_ct[i+ti*block_size_x+j];
+                        float diffx  = l_x[ti] - sh_x[i+ti*block_size_x+j];
+                        float diffy  = l_y[ti] - sh_y[i+ti*block_size_x+j];
+                        float diffz  = l_z[ti] - sh_z[i+ti*block_size_x+j];
+
+                        uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
+                        if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                            correlations[pos] = 1;
+                        }
+
+                    }
+                }
+
+
+
+            }
+
+        }
+
+
+    }
+}
+
+
+
+
+
+
+
+__global__ void quadratic_difference_linear_clean(char *correlations, int N, int sliding_window_width, float *x, float *y, float *z, float *ct) {
 
     int tx = threadIdx.x;
     int bx = blockIdx.x * block_size_x;
@@ -81,6 +230,25 @@ __global__ void quadratic_difference_linear(char *correlations, int N, int slidi
         //small optimization to eliminate bounds checks for most blocks
         if (bx+block_size_x+window_width-1 < N) {
 
+            //unfortunately there's no better way to do this right now
+            //[1, 2, 3, 4, 5, 6, 10, 12, 15]
+            #if f_unroll == 2
+            #pragma unroll 2
+            #elif f_unroll == 3
+            #pragma unroll 3
+            #elif f_unroll == 4
+            #pragma unroll 4
+            #elif f_unroll == 5
+            #pragma unroll 5
+            #elif f_unroll == 6
+            #pragma unroll 6
+            #elif f_unroll == 10
+            #pragma unroll 10
+            #elif f_unroll == 12
+            #pragma unroll 12
+            #elif f_unroll == 15
+            #pragma unroll 15
+            #endif            
             for (int j=0; j < window_width; j++) {
                 float diffct = ct_i - sh_ct[i+j];
                 float diffx  = x_i - sh_x[i+j];
@@ -98,7 +266,28 @@ __global__ void quadratic_difference_linear(char *correlations, int N, int slidi
         //same as above but with bounds checks for last few blocks
         else {
 
-            for (int j=0; j < window_width && bx+i+j < N; j++) {
+            //unfortunately there's no better way to do this right now
+            //[1, 2, 3, 4, 5, 6, 10, 12, 15]
+            #if f_unroll == 2
+            #pragma unroll 2
+            #elif f_unroll == 3
+            #pragma unroll 3
+            #elif f_unroll == 4
+            #pragma unroll 4
+            #elif f_unroll == 5
+            #pragma unroll 5
+            #elif f_unroll == 6
+            #pragma unroll 6
+            #elif f_unroll == 10
+            #pragma unroll 10
+            #elif f_unroll == 12
+            #pragma unroll 12
+            #elif f_unroll == 15
+            #pragma unroll 15
+            #endif            
+            for (int j=0; j < window_width; j++) {
+
+                if (bx+i+j >= N) { return; }
 
                 float diffct = ct_i - sh_ct[i+j];
                 float diffx  = x_i - sh_x[i+j];
@@ -116,6 +305,12 @@ __global__ void quadratic_difference_linear(char *correlations, int N, int slidi
 
     }
 }
+
+
+
+
+
+
 
 
 

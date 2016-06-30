@@ -7,6 +7,7 @@ with open('quadratic_difference.cu', 'r') as f:
     kernel_string = f.read()
 
 N = np.int32(4.5e6)
+#N = np.int32(30000)
 print (N)
 
 N_light_crossing     = 1500
@@ -58,18 +59,23 @@ problem_size = (int(N), 1)
 tune_params = dict()
 tune_params["block_size_x"] = [32*i for i in range(1,33)]
 tune_params["use_if"] = [1]
+tune_params["tile_size_x"] = [1, 2, 4, 8, 16]
+tune_params["f_unroll"] = [i for i in range(1,20) if 1500/float(i) == 1500/i]
+tune_params["read_only"] = [0, 1]
 
-grid_div_x = ["block_size_x"]
+grid_div_x = ["block_size_x", "tile_size_x"]
+#grid_div_x = ["block_size_x"]
 
 params = dict()
 params["block_size_x"] = 32
 params["use_if"] = 1
+params["tile_size_x"] = 2
 
 result2 = run_kernel("quadratic_difference_linear", kernel_string, problem_size, args, params,
     grid_div_x=grid_div_x)
 
 
-#print ("hits ", np.sum(result[0]), np.sum(result2[0]), "density= ", np.sum(result[0])/float(correlations.size) )
+print ("hits ", np.sum(result[0]), np.sum(result2[0]) )
 
 #set False here to True to visually compare the output of both kernels
 if False:
