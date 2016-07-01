@@ -2,16 +2,29 @@
 
 __constant__ float2 d_Vertices[VERTICES];
 
-//__constant__ float d_vertex_x[VERTICES];
-//__constant__ float d_vertex_y[VERTICES];
-
 //tuning parameters
 //block_size_x any sensible thread block size
 //tile_size any sensible tile size value
 //prefetch 0 or 1 for reusing constant memory from previous iteration
 
+//#ifndef prefetch
+//#define prefetch 0
+//#endif
 
-#if 0
+#ifndef use_bitmap
+#define use_bitmap 0
+#define coalesce_bitmap 0
+#endif
+
+#ifndef block_size_x
+#define block_size_x 256
+#endif
+
+#ifndef tile_size
+#define tile_size 1
+#endif
+
+
 __global__ void cn_PnPoly(int* bitmap, float2* points, int n) {
     int ti = blockIdx.x * block_size_x * tile_size + threadIdx.x;
 
@@ -26,27 +39,41 @@ __global__ void cn_PnPoly(int* bitmap, float2* points, int n) {
             p[k] = points[ti+k*block_size_x];
         }
 
-        #if prefetch == 1
-        float2 vp = d_Vertices[0];
-        #endif
+        int k = VERTICES-1;
+//        #if prefetch == 1
+//        float2 vj; // = d_Vertices[k];
+//        float2 vk;
+//        #endif
 
         // loop through all edges of the polygon
-        for (int i=0; i<VERTICES-1; i++) {    // edge from v to vp
+        for (int j=0; j<VERTICES; k = j++) {    // edge from v to vp
 
-            #if prefetch == 1
-            float2 v = vp;
-            vp = d_Vertices[i+1];
-            #else
-            float2 v = d_Vertices[i];
-            float2 vp = d_Vertices[i+1];
+//            #if prefetch == 1
+//            float2 vj = d_Vertices[j]; 
+//            float2 vk = d_Vertices[k]; 
+//            #else
+            float2 vj = d_Vertices[j]; 
+            float2 vk = d_Vertices[k]; 
+//            #endif
+
+            #if method == 1
+            float vb = (vj.x - vk.x) / (vj.y - vk.y);
             #endif
-            float vb = (vp.x - v.x) / (vp.y - v.y);
 
             #pragma unroll
-            for (int k=0; k<tile_size; k++) {
+            for (int i=0; i<tile_size; i++) {
 
-                int b = ((v.y <= p[k].y) && (vp.y > p[k].y)) || ((v.y > p[k].y) && (vp.y <= p[k].y));
-                cn[k] += b && (p[k].x < v.x + vb * (p[k].y - v.y));
+                #if method == 0
+                if ( ((vj.y>p[i].y) != (vk.y>p[i].y)) &&
+                        (p[i].x < (vk.x-vj.x) * (p[i].y-vj.y) / (vk.y-vj.y) + vj.x) ) {
+                    cn[i] = !cn[i];
+                }
+                #elif method == 1
+                int b = ((vk.y <= p[k].y) && (vj.y > p[k].y)) || ((vk.y > p[k].y) && (vj.y <= p[k].y));
+                cn[k] += b && (p[k].x < vk.x + vb * (p[k].y - vj.y));
+
+                #endif
+
 
             }
         }
@@ -122,65 +149,24 @@ __global__ void cn_PnPoly_naive(int* bitmap, float2* points, int n) {
         int c = 0;
         float2 p = points[ti];
 
-        // loop through all edges of the polygon
-        float2 v = d_Vertices[0];
-        float2 vp = d_Vertices[VERTICES-1];
+        int k = VERTICES-1;
 
-        for (int i=0; i<VERTICES-1; i++) {    // edge from v to vp
+        for (int j=0; j<VERTICES; k = j++) {    // edge from v to vp
 
-            if ( ((v.y>p.y) != (vp.y>p.y)) &&
-                    (p.x < (vp.x-v.x) * (p.y-v.y) / (vp.y-v.y) + v.x) )
+            float2 vj = d_Vertices[j]; 
+            float2 vk = d_Vertices[k]; 
+
+            if ( ((vj.y>p.y) != (vk.y>p.y)) &&
+                    (p.x < (vk.x-vj.x) * (p.y-vj.y) / (vk.y-vj.y) + vj.x) )
                 c = !c;
-
-            vp = v;
-            v = d_Vertices[i+1];
-
-
-//        if ( ((vp.y>p.y) != (v.y>p.y)) &&
-//             (p.x < (v.x-vp.x) * (p.y-vp.y) / (v.y-vp.y) + vp.x) ) {
-//                c = !c;
-//        }
-
-
-
-/*
-            if ( ((vp.y>p.y) != (v.y>p.y)) &&
-                    (p.x < (v.x-vp.x) * (p.y-vp.y) / (v.y-vp.y) + vp.x) ) {
-                //c = !c;
-                c++;
-            }
-*/
-/*
-            if (((v.y <= p.y) && (vp.y > p.y)) || ((v.y > p.y) && (vp.y <= p.y))) {
-                float vt = (float)(p.y  - v.y) / (vp.y - v.y);
-                if (p.x <  v.x + vt * (vp.x - v.x)) {
-                    c++;
-                }
-            }
-*/
-
-            //if ( ((v.y>p.y) != (vp.y>p.y)) && (p.x < (vp.x-v.x) * (p.y-v.y) / (vp.y-v.y) + v.x) ) {
-                //c = !c;
-            //    c += 1;
-            //}
-
-
-            //float vb = (vp.x - v.x) / (vp.y - v.y);
-
-            //int b = ((v.y <= p.y) && (vp.y > p.y)) || ((v.y > p.y) && (vp.y <= p.y));
-            //cn += b && (p.x < v.x + vb * (p.y - v.y));
 
         }
 
-        //bitmap[ti] = (cn & 1); // 0 if even (out), and 1 if odd (in)
         bitmap[ti] = c; // 0 if even (out), and 1 if odd (in)
-//        bitmap[ti] = c & 1; // 0 if even (out), and 1 if odd (in)
-        //bitmap[ti] = ; // 0 if even (out), and 1 if odd (in)
 
     }
 }
 
-#endif
 
 /*CPU version*/
 float pnpoly_cn(int *bitmap, float2 *v, float2 *p) {
@@ -209,14 +195,13 @@ __global__ void pnpoly_cn_gpu(int *bitmap, float2 *points, int n) {
     if (i < n) {
 
         float2 p = points[i];
-        float2 vj, vk;
         int c = 0;
         int k = VERTICES-1;
         int j = 0;
 
         for (j = 0; j < VERTICES; k = j++) {
-            vj = d_Vertices[j]; 
-            vk = d_Vertices[k]; 
+            float2 vj = d_Vertices[j]; 
+            float2 vk = d_Vertices[k]; 
 
             if ( ((vj.y>p.y) != (vk.y>p.y)) &&
                     (p.x < (vk.x-vj.x) * (p.y-vj.y) / (vk.y-vj.y) + vj.x) )
@@ -224,10 +209,7 @@ __global__ void pnpoly_cn_gpu(int *bitmap, float2 *points, int n) {
 
         }
 
-        bitmap[i] = c & 1;
-//        if (i<VERTICES)
-//        bitmap[i] = d_Vertices[i].x;
-//        bitmap[i] = i;
+        bitmap[i] = c;
 
     }
 }

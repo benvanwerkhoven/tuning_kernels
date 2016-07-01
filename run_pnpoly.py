@@ -11,14 +11,11 @@ size = numpy.int32(numpy.prod(problem_size))
 vertices = 600
 
 points = numpy.random.randn(2*size).astype(numpy.float32)
-#bitmap = numpy.zeros(size).astype(numpy.int32)
 bitmap = numpy.zeros(size).astype(numpy.int32)
 
-#the vertices are not yet sorted so they probably do not form a proper polygon yet
-#need to verify the output of the gpu kernel, with a circle I can do a simple distance to 0,0 check for all points
-
-#should use pyplot.plot to plot the vertices and see if they are in the right order to form a polygon
-#don't know yet if it should be clockwise or counter-clockwise
+#to verify the output of the gpu kernel
+#we use a circle with radius 1 as polygon and
+#do a simple distance to 0,0 check for all points
 
 vertex_seeds = numpy.sort(numpy.random.rand(vertices)*2.0*numpy.pi)[::-1]
 
@@ -54,27 +51,33 @@ cmem_args= {'d_Vertices': vertex_xy }
 tune_params = OrderedDict()
 tune_params["block_size_x"] = [2**i for i in range(1,10)][::-1]
 tune_params["prefetch"] = [0, 1]
-tune_params["use_bitmap"] = [0, 1, 2]
-tune_params["coalesce_bitmap"] = [0, 1]
-tune_params["tile_size"] = [1] + [2*i for i in range(1,17)]
+#tune_params["use_bitmap"] = [0, 1, 2]
+#tune_params["coalesce_bitmap"] = [0, 1]
+
+tune_params["tile_size"] = [1, 2]
+#tune_params["tile_size"] = [1] + [2*i for i in range(1,17)]
 
 #use restriction because coalesce_bitmap=1 is only effective when use_bitmap=1
-restrict = ["coalesce_bitmap==0 or use_bitmap==1"]
+#restrict = ["coalesce_bitmap==0 or use_bitmap==1"]
 
 grid_div_x = ["block_size_x", "tile_size"]
 
 params = dict()
 params["block_size_x"] = 512
 params["prefetch"] = 0
-params["use_bitmap"] = 0
-params["coalesce_bitmap"] = 0
+#params["use_bitmap"] = 0
+#params["coalesce_bitmap"] = 0
 params["tile_size"] = 1
 
-result = kernel_tuner.run_kernel("pnpoly_cn_gpu", kernel_string,
+#kernel_name = "cn_PnPoly"
+kernel_name = "cn_PnPoly_naive"
+#kernel_name = "pnpoly_cn_gpu"
+
+result = kernel_tuner.run_kernel(kernel_name, kernel_string,
     problem_size, args, params,
     grid_div_x=grid_div_x, cmem_args=cmem_args)
 
-#print result[0][:600]
+result = [result[0], None, None]
 
 #result = kernel_tuner.run_kernel("pnpoly_cn", kernel_string,
 #    problem_size, args, params,
@@ -82,6 +85,16 @@ result = kernel_tuner.run_kernel("pnpoly_cn_gpu", kernel_string,
 
 print "sum=" + str(numpy.sum(result[0]))
 
+params["prefetch"] = 1
+res = kernel_tuner.run_kernel("cn_PnPoly", kernel_string,
+    problem_size, args, params,
+    grid_div_x=grid_div_x, cmem_args=cmem_args)
+
+print "sum=" + str(numpy.sum(res[0]))
+
+print "diff=" + str(numpy.sum(numpy.abs(res[0] - result[0])))
+
+print res[0]
 
 #compute reference answer
 
@@ -90,9 +103,9 @@ print "answer=" + str(numpy.sum(reference))
 
 
 
-#kernel_tuner.tune_kernel("cn_PnPoly", kernel_string,
-#    problem_size, args, tune_params,
-#    grid_div_x=grid_div_x, restrictions=restrict, cmem_args=cmem_args)
+kernel_tuner.tune_kernel("cn_PnPoly", kernel_string,
+    problem_size, args, tune_params,
+    grid_div_x=grid_div_x, cmem_args=cmem_args, answer=result)
 
 
 
