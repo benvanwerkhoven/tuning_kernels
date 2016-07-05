@@ -57,13 +57,18 @@ __global__ void quadratic_difference(int8_t *correlations, int N, int sliding_wi
 #define LDG(x, y) x[y]
 #endif
 
+#ifndef write_sums
+#define write_sums 0
+#endif
+
+
 
 /*
  * This kernel uses the usual set of optimizations, including tiling, partial loop unrolling, read-only cache. 
  * Tuning parameters supported are 'read_only' [0,1], 'tile_size_x' divisor of 1500, and 'block_size_x' multiple of 32.
  *
  */
-__global__ void quadratic_difference_linear(char *__restrict__ correlations, int N, int sliding_window_width,
+__global__ void quadratic_difference_linear(char *__restrict__ correlations, int *sums, int N, int sliding_window_width,
         const float *__restrict__ x, const float *__restrict__ y, const float *__restrict__ z, const float *__restrict__ ct) {
 
     int tx = threadIdx.x;
@@ -93,6 +98,9 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
         float l_x[tile_size_x];
         float l_y[tile_size_x];
         float l_z[tile_size_x];
+        #if write_sums == 1
+        int sum[tile_size_x];
+        #endif
 
         //keep the most often used values in registers
         for (int ti=0; ti<tile_size_x; ti++) {
@@ -100,6 +108,9 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
             l_x[ti] = sh_x[i+ti*block_size_x];
             l_y[ti] = sh_y[i+ti*block_size_x];
             l_z[ti] = sh_z[i+ti*block_size_x];
+            #if write_sums == 1
+            sum[ti] = 0;
+            #endif
         }
 
         //small optimization to eliminate bounds checks for most blocks
@@ -137,6 +148,9 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
                         uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
                         if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
                             correlations[pos] = 1;
+                            #if write_sums == 1
+                            sum[ti] += 1;
+                            #endif
                         }
 
                 }
@@ -180,6 +194,9 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
                         uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
                         if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
                             correlations[pos] = 1;
+                            #if write_sums == 1
+                            sum[ti] += 1;
+                            #endif
                         }
 
                     }
@@ -190,6 +207,14 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
             }
 
         }
+
+        #if write_sums == 1
+        for (int ti=0; ti<tile_size_x; ti++) {
+            sums[bx+i+ti*block_size_x] = sum[ti];
+        }
+        #endif
+
+
 
 
     }
