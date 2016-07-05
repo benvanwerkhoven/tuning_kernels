@@ -1,0 +1,1447 @@
+nohup: ignoring input
+4500000
+(4500000, 1500)
+('shape of sum array', (4500000,))
+('shape of correlations', (1500, 4500000))
+('sum of correlations, sum of row sums', 14300030, 14300030)
+block_size_x=32, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 205.714691162 ms.
+block_size_x=32, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 127.476760864 ms.
+block_size_x=32, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 130.437036133 ms.
+block_size_x=32, f_unroll=1, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 196.102606201 ms.
+block_size_x=32, f_unroll=1, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 250.244076538 ms.
+block_size_x=32, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 176.665011597 ms.
+block_size_x=32, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 127.582009888 ms.
+block_size_x=32, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 127.915428162 ms.
+block_size_x=32, f_unroll=2, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 193.484320068 ms.
+block_size_x=32, f_unroll=2, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 249.41595459 ms.
+block_size_x=32, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 185.005502319 ms.
+block_size_x=32, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 133.771374512 ms.
+block_size_x=32, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 137.130303955 ms.
+block_size_x=32, f_unroll=3, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 193.857247925 ms.
+block_size_x=32, f_unroll=3, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 255.305609131 ms.
+block_size_x=32, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 193.542980957 ms.
+block_size_x=32, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 150.757791138 ms.
+block_size_x=32, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 134.948388672 ms.
+block_size_x=32, f_unroll=4, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 202.555895996 ms.
+block_size_x=32, f_unroll=4, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 253.542767334 ms.
+block_size_x=32, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 192.031759644 ms.
+block_size_x=32, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 152.653225708 ms.
+block_size_x=32, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 139.051776123 ms.
+block_size_x=32, f_unroll=5, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 203.795349121 ms.
+block_size_x=32, f_unroll=5, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 253.74864502 ms.
+block_size_x=32, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 210.542825317 ms.
+block_size_x=32, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 169.113247681 ms.
+block_size_x=32, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 139.417184448 ms.
+block_size_x=32, f_unroll=6, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 206.930471802 ms.
+block_size_x=32, f_unroll=6, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 253.695571899 ms.
+block_size_x=32, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 205.355718994 ms.
+block_size_x=32, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 198.647918701 ms.
+block_size_x=32, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 180.050872803 ms.
+block_size_x=32, f_unroll=10, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 209.313473511 ms.
+block_size_x=32, f_unroll=10, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 253.260336304 ms.
+block_size_x=32, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 203.300314331 ms.
+block_size_x=32, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 208.449868774 ms.
+block_size_x=32, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 196.863058472 ms.
+block_size_x=32, f_unroll=12, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 205.440359497 ms.
+block_size_x=32, f_unroll=12, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 343.79732666 ms.
+block_size_x=32, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 201.964697266 ms.
+block_size_x=32, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 243.788900757 ms.
+block_size_x=32, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 195.722009277 ms.
+block_size_x=32, f_unroll=15, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 205.423126221 ms.
+block_size_x=32, f_unroll=15, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 366.079296875 ms.
+block_size_x=64, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 138.076028442 ms.
+block_size_x=64, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 67.258744812 ms.
+block_size_x=64, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 69.9130737305 ms.
+block_size_x=64, f_unroll=1, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 101.572575378 ms.
+block_size_x=64, f_unroll=1, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 188.464974976 ms.
+block_size_x=64, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 117.174310303 ms.
+block_size_x=64, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 67.2697097778 ms.
+block_size_x=64, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 69.3848007202 ms.
+block_size_x=64, f_unroll=2, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 100.407723999 ms.
+block_size_x=64, f_unroll=2, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 187.888134766 ms.
+block_size_x=64, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 121.782566833 ms.
+block_size_x=64, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 73.1139648437 ms.
+block_size_x=64, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 73.2980987549 ms.
+block_size_x=64, f_unroll=3, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 100.48316803 ms.
+block_size_x=64, f_unroll=3, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 191.716098022 ms.
+block_size_x=64, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 126.769619751 ms.
+block_size_x=64, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 81.5735183716 ms.
+block_size_x=64, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 72.3649597168 ms.
+block_size_x=64, f_unroll=4, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 105.479173279 ms.
+block_size_x=64, f_unroll=4, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 193.341488647 ms.
+block_size_x=64, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 125.714968872 ms.
+block_size_x=64, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 82.206817627 ms.
+block_size_x=64, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 74.3643325806 ms.
+block_size_x=64, f_unroll=5, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 105.638656616 ms.
+block_size_x=64, f_unroll=5, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 191.503842163 ms.
+block_size_x=64, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 138.338705444 ms.
+block_size_x=64, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 89.1395889282 ms.
+block_size_x=64, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 74.4075454712 ms.
+block_size_x=64, f_unroll=6, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.551147461 ms.
+block_size_x=64, f_unroll=6, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 190.785058594 ms.
+block_size_x=64, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 134.858001709 ms.
+block_size_x=64, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 103.696690369 ms.
+block_size_x=64, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 85.3223876953 ms.
+block_size_x=64, f_unroll=10, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 109.428775024 ms.
+block_size_x=64, f_unroll=10, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 191.005490112 ms.
+block_size_x=64, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 133.464712524 ms.
+block_size_x=64, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 108.452593994 ms.
+block_size_x=64, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 88.974546814 ms.
+block_size_x=64, f_unroll=12, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.69488678 ms.
+block_size_x=64, f_unroll=12, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 265.389031982 ms.
+block_size_x=64, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 132.550021362 ms.
+block_size_x=64, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 119.394471741 ms.
+block_size_x=64, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 88.7855239868 ms.
+block_size_x=64, f_unroll=15, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.838752747 ms.
+block_size_x=64, f_unroll=15, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 276.585540771 ms.
+block_size_x=96, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 98.1070465088 ms.
+block_size_x=96, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 55.8448257446 ms.
+block_size_x=96, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 54.4983177185 ms.
+block_size_x=96, f_unroll=1, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 102.398880005 ms.
+block_size_x=96, f_unroll=1, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 132.643707275 ms.
+block_size_x=96, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 81.4794235229 ms.
+block_size_x=96, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 56.0791816711 ms.
+block_size_x=96, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 56.4268424988 ms.
+block_size_x=96, f_unroll=2, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 101.474597168 ms.
+block_size_x=96, f_unroll=2, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 132.529458618 ms.
+block_size_x=96, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 85.8213439941 ms.
+block_size_x=96, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 61.6478652954 ms.
+block_size_x=96, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 57.7597503662 ms.
+block_size_x=96, f_unroll=3, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 101.029710388 ms.
+block_size_x=96, f_unroll=3, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 131.736941528 ms.
+block_size_x=96, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 88.0230270386 ms.
+block_size_x=96, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 65.3027633667 ms.
+block_size_x=96, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 56.7679481506 ms.
+block_size_x=96, f_unroll=4, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.185420227 ms.
+block_size_x=96, f_unroll=4, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 132.029318237 ms.
+block_size_x=96, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 87.1323196411 ms.
+block_size_x=96, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 65.5344711304 ms.
+block_size_x=96, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 58.1216827393 ms.
+block_size_x=96, f_unroll=5, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.517503357 ms.
+block_size_x=96, f_unroll=5, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 135.429992676 ms.
+block_size_x=96, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 95.2329330444 ms.
+block_size_x=96, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 69.0670211792 ms.
+block_size_x=96, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 58.0013824463 ms.
+block_size_x=96, f_unroll=6, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.606814575 ms.
+block_size_x=96, f_unroll=6, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 131.859655762 ms.
+block_size_x=96, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 92.6177536011 ms.
+block_size_x=96, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 76.6870269775 ms.
+block_size_x=96, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 60.9035964966 ms.
+block_size_x=96, f_unroll=10, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 107.040499878 ms.
+block_size_x=96, f_unroll=10, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 132.199081421 ms.
+block_size_x=96, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 91.7614654541 ms.
+block_size_x=96, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 79.068913269 ms.
+block_size_x=96, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 61.9761154175 ms.
+block_size_x=96, f_unroll=12, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 111.08258667 ms.
+block_size_x=96, f_unroll=12, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 177.358175659 ms.
+block_size_x=96, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 90.8721725464 ms.
+block_size_x=96, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 83.1981170654 ms.
+block_size_x=96, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 62.5232315063 ms.
+block_size_x=96, f_unroll=15, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 106.972859192 ms.
+block_size_x=96, f_unroll=15, write_sums=1, tile_size_x=16, quadratic_difference_linear took: 184.926553345 ms.
+block_size_x=128, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 74.0658309937 ms.
+block_size_x=128, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 43.4075134277 ms.
+block_size_x=128, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 44.0206855774 ms.
+block_size_x=128, f_unroll=1, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 77.4767852783 ms.
+skipping config 128_1_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 62.9127746582 ms.
+block_size_x=128, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 43.3355262756 ms.
+block_size_x=128, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 44.8160636902 ms.
+block_size_x=128, f_unroll=2, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 76.9591674805 ms.
+skipping config 128_2_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 68.626625061 ms.
+block_size_x=128, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.3590270996 ms.
+block_size_x=128, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 46.3230537415 ms.
+block_size_x=128, f_unroll=3, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 76.7965393066 ms.
+skipping config 128_3_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 67.1976455688 ms.
+block_size_x=128, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.756275177 ms.
+block_size_x=128, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.1276229858 ms.
+block_size_x=128, f_unroll=4, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 80.8828292847 ms.
+skipping config 128_4_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 66.4174713135 ms.
+block_size_x=128, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 53.1406219482 ms.
+block_size_x=128, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 46.1563201904 ms.
+block_size_x=128, f_unroll=5, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 81.5779922485 ms.
+skipping config 128_5_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 72.1851394653 ms.
+block_size_x=128, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 55.1632759094 ms.
+block_size_x=128, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.3529083252 ms.
+block_size_x=128, f_unroll=6, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 81.9832778931 ms.
+skipping config 128_6_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 73.1003768921 ms.
+block_size_x=128, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 60.2559616089 ms.
+block_size_x=128, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 47.6651000977 ms.
+block_size_x=128, f_unroll=10, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 82.2445632935 ms.
+skipping config 128_10_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 69.5447677612 ms.
+block_size_x=128, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 62.1118209839 ms.
+block_size_x=128, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 47.5897598267 ms.
+block_size_x=128, f_unroll=12, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 81.3454406738 ms.
+skipping config 128_12_1_16 reason: too much shared memory used
+block_size_x=128, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 68.9667648315 ms.
+block_size_x=128, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 65.3333633423 ms.
+block_size_x=128, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 47.8610687256 ms.
+block_size_x=128, f_unroll=15, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 81.6630203247 ms.
+skipping config 128_15_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 72.1807281494 ms.
+block_size_x=160, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 41.9267845154 ms.
+block_size_x=160, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 50.4864570618 ms.
+block_size_x=160, f_unroll=1, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 66.1538101196 ms.
+skipping config 160_1_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.3125762939 ms.
+block_size_x=160, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 42.0836349487 ms.
+block_size_x=160, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 53.1694854736 ms.
+block_size_x=160, f_unroll=2, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 65.7508422852 ms.
+skipping config 160_2_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 55.7242111206 ms.
+block_size_x=160, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.48828125 ms.
+block_size_x=160, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 54.9312065125 ms.
+block_size_x=160, f_unroll=3, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 65.3449859619 ms.
+skipping config 160_3_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 56.6847480774 ms.
+block_size_x=160, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.2673789978 ms.
+block_size_x=160, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 54.4759742737 ms.
+block_size_x=160, f_unroll=4, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 68.5540145874 ms.
+skipping config 160_4_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 61.2027709961 ms.
+block_size_x=160, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.9433540344 ms.
+block_size_x=160, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 53.9335296631 ms.
+block_size_x=160, f_unroll=5, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 68.5249145508 ms.
+skipping config 160_5_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 60.3379272461 ms.
+block_size_x=160, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 53.0039672852 ms.
+block_size_x=160, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 53.9803329468 ms.
+block_size_x=160, f_unroll=6, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 68.5756500244 ms.
+skipping config 160_6_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 58.7594238281 ms.
+block_size_x=160, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 55.713433075 ms.
+block_size_x=160, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 56.3230667114 ms.
+block_size_x=160, f_unroll=10, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 69.4452941895 ms.
+skipping config 160_10_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 65.1085571289 ms.
+block_size_x=160, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 56.7443908691 ms.
+block_size_x=160, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 58.1115585327 ms.
+block_size_x=160, f_unroll=12, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 69.2821655273 ms.
+skipping config 160_12_1_16 reason: too much shared memory used
+block_size_x=160, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 57.7188987732 ms.
+block_size_x=160, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 59.1217010498 ms.
+block_size_x=160, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 58.7387588501 ms.
+block_size_x=160, f_unroll=15, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 69.5915115356 ms.
+skipping config 160_15_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 60.3232894897 ms.
+block_size_x=192, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 40.863961792 ms.
+block_size_x=192, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.0698562622 ms.
+block_size_x=192, f_unroll=1, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 56.2499450684 ms.
+skipping config 192_1_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.6144187927 ms.
+block_size_x=192, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 40.3315711975 ms.
+block_size_x=192, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.7266937256 ms.
+block_size_x=192, f_unroll=2, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 56.4068099976 ms.
+skipping config 192_2_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.0393592834 ms.
+block_size_x=192, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.9997749329 ms.
+block_size_x=192, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 47.3112327576 ms.
+block_size_x=192, f_unroll=3, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 55.8903678894 ms.
+skipping config 192_3_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.2366790771 ms.
+block_size_x=192, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.3285507202 ms.
+block_size_x=192, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.6086334229 ms.
+block_size_x=192, f_unroll=4, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 58.7110404968 ms.
+skipping config 192_4_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.7142585754 ms.
+block_size_x=192, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.2131782532 ms.
+block_size_x=192, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 48.3008895874 ms.
+block_size_x=192, f_unroll=5, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 58.4137535095 ms.
+skipping config 192_5_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 57.7583869934 ms.
+block_size_x=192, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.6245697021 ms.
+block_size_x=192, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.7229759216 ms.
+block_size_x=192, f_unroll=6, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 58.4151420593 ms.
+skipping config 192_6_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.4845184326 ms.
+block_size_x=192, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.6412490845 ms.
+block_size_x=192, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 48.7596359253 ms.
+block_size_x=192, f_unroll=10, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 58.5470458984 ms.
+skipping config 192_10_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.9813056946 ms.
+block_size_x=192, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 53.6791877747 ms.
+block_size_x=192, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 48.2414405823 ms.
+block_size_x=192, f_unroll=12, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 59.1091972351 ms.
+skipping config 192_12_1_16 reason: too much shared memory used
+block_size_x=192, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 55.5130752563 ms.
+block_size_x=192, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 55.3010047913 ms.
+block_size_x=192, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 49.3875137329 ms.
+block_size_x=192, f_unroll=15, write_sums=1, tile_size_x=8, quadratic_difference_linear took: 59.6812095642 ms.
+skipping config 192_15_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 56.3031616211 ms.
+block_size_x=224, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 42.8896827698 ms.
+block_size_x=224, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.9544128418 ms.
+skipping config 224_1_1_8 reason: too much shared memory used
+skipping config 224_1_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.5549575806 ms.
+block_size_x=224, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 41.9787071228 ms.
+block_size_x=224, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 44.272428894 ms.
+skipping config 224_2_1_8 reason: too much shared memory used
+skipping config 224_2_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.9687744141 ms.
+block_size_x=224, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.0867912292 ms.
+block_size_x=224, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.5211013794 ms.
+skipping config 224_3_1_8 reason: too much shared memory used
+skipping config 224_3_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.3048576355 ms.
+block_size_x=224, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.9924163818 ms.
+block_size_x=224, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 44.2161979675 ms.
+skipping config 224_4_1_8 reason: too much shared memory used
+skipping config 224_4_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.9860092163 ms.
+block_size_x=224, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.0216644287 ms.
+block_size_x=224, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.9571510315 ms.
+skipping config 224_5_1_8 reason: too much shared memory used
+skipping config 224_5_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.6861701965 ms.
+block_size_x=224, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.7970565796 ms.
+block_size_x=224, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.3109313965 ms.
+skipping config 224_6_1_8 reason: too much shared memory used
+skipping config 224_6_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.4658943176 ms.
+block_size_x=224, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.1331329346 ms.
+block_size_x=224, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 45.5750846863 ms.
+skipping config 224_10_1_8 reason: too much shared memory used
+skipping config 224_10_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.3577728271 ms.
+block_size_x=224, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.8786170959 ms.
+block_size_x=224, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 46.7971908569 ms.
+skipping config 224_12_1_8 reason: too much shared memory used
+skipping config 224_12_1_16 reason: too much shared memory used
+block_size_x=224, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.1129150391 ms.
+block_size_x=224, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 52.3397247314 ms.
+block_size_x=224, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 47.8780220032 ms.
+skipping config 224_15_1_8 reason: too much shared memory used
+skipping config 224_15_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 56.9162483215 ms.
+block_size_x=256, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.9425086975 ms.
+block_size_x=256, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 38.7048057556 ms.
+skipping config 256_1_1_8 reason: too much shared memory used
+skipping config 256_1_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.673690033 ms.
+block_size_x=256, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.0424575806 ms.
+block_size_x=256, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.3691001892 ms.
+skipping config 256_2_1_8 reason: too much shared memory used
+skipping config 256_2_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.3395896912 ms.
+block_size_x=256, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.3446792603 ms.
+block_size_x=256, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.9339653015 ms.
+skipping config 256_3_1_8 reason: too much shared memory used
+skipping config 256_3_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.4670143127 ms.
+block_size_x=256, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0167427063 ms.
+block_size_x=256, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.1388275146 ms.
+skipping config 256_4_1_8 reason: too much shared memory used
+skipping config 256_4_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.5828163147 ms.
+block_size_x=256, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.4453834534 ms.
+block_size_x=256, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.2423614502 ms.
+skipping config 256_5_1_8 reason: too much shared memory used
+skipping config 256_5_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.8773498535 ms.
+block_size_x=256, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9132034302 ms.
+block_size_x=256, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.212953949 ms.
+skipping config 256_6_1_8 reason: too much shared memory used
+skipping config 256_6_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.55389328 ms.
+block_size_x=256, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1980545044 ms.
+block_size_x=256, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.660358429 ms.
+skipping config 256_10_1_8 reason: too much shared memory used
+skipping config 256_10_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.2367744446 ms.
+block_size_x=256, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3363204956 ms.
+block_size_x=256, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 44.0570114136 ms.
+skipping config 256_12_1_8 reason: too much shared memory used
+skipping config 256_12_1_16 reason: too much shared memory used
+block_size_x=256, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.0053451538 ms.
+block_size_x=256, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.743422699 ms.
+block_size_x=256, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.531968689 ms.
+skipping config 256_15_1_8 reason: too much shared memory used
+skipping config 256_15_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.5659713745 ms.
+block_size_x=288, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 40.826738739 ms.
+block_size_x=288, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.8403465271 ms.
+skipping config 288_1_1_8 reason: too much shared memory used
+skipping config 288_1_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.3131126404 ms.
+block_size_x=288, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 41.87292099 ms.
+block_size_x=288, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.3932098389 ms.
+skipping config 288_2_1_8 reason: too much shared memory used
+skipping config 288_2_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.9795394897 ms.
+block_size_x=288, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.9439804077 ms.
+block_size_x=288, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.5972732544 ms.
+skipping config 288_3_1_8 reason: too much shared memory used
+skipping config 288_3_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.891847229 ms.
+block_size_x=288, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.6015167236 ms.
+block_size_x=288, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.1730239868 ms.
+skipping config 288_4_1_8 reason: too much shared memory used
+skipping config 288_4_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.2080314636 ms.
+block_size_x=288, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.7949638367 ms.
+block_size_x=288, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.9961662292 ms.
+skipping config 288_5_1_8 reason: too much shared memory used
+skipping config 288_5_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.6248970032 ms.
+block_size_x=288, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.899609375 ms.
+block_size_x=288, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.6262718201 ms.
+skipping config 288_6_1_8 reason: too much shared memory used
+skipping config 288_6_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.127986908 ms.
+block_size_x=288, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 54.0397506714 ms.
+block_size_x=288, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.0003196716 ms.
+skipping config 288_10_1_8 reason: too much shared memory used
+skipping config 288_10_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.4430908203 ms.
+block_size_x=288, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 54.5552574158 ms.
+block_size_x=288, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.857106781 ms.
+skipping config 288_12_1_8 reason: too much shared memory used
+skipping config 288_12_1_16 reason: too much shared memory used
+block_size_x=288, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.6786689758 ms.
+block_size_x=288, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 56.0625793457 ms.
+block_size_x=288, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 43.7097732544 ms.
+skipping config 288_15_1_8 reason: too much shared memory used
+skipping config 288_15_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 56.3386306763 ms.
+block_size_x=320, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.3262390137 ms.
+block_size_x=320, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 36.3646087646 ms.
+skipping config 320_1_1_8 reason: too much shared memory used
+skipping config 320_1_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.4382209778 ms.
+block_size_x=320, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 38.1570106506 ms.
+block_size_x=320, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 38.9579719543 ms.
+skipping config 320_2_1_8 reason: too much shared memory used
+skipping config 320_2_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.0667076111 ms.
+block_size_x=320, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.8451652527 ms.
+block_size_x=320, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.2205055237 ms.
+skipping config 320_3_1_8 reason: too much shared memory used
+skipping config 320_3_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.1529212952 ms.
+block_size_x=320, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.2380348206 ms.
+block_size_x=320, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.8578559875 ms.
+skipping config 320_4_1_8 reason: too much shared memory used
+skipping config 320_4_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.178527832 ms.
+block_size_x=320, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.4280189514 ms.
+block_size_x=320, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.9681541443 ms.
+skipping config 320_5_1_8 reason: too much shared memory used
+skipping config 320_5_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.9406784058 ms.
+block_size_x=320, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.2174201965 ms.
+block_size_x=320, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.9074043274 ms.
+skipping config 320_6_1_8 reason: too much shared memory used
+skipping config 320_6_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.314617157 ms.
+block_size_x=320, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.8849594116 ms.
+block_size_x=320, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.2875778198 ms.
+skipping config 320_10_1_8 reason: too much shared memory used
+skipping config 320_10_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.3036727905 ms.
+block_size_x=320, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.0026435852 ms.
+block_size_x=320, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.9163330078 ms.
+skipping config 320_12_1_8 reason: too much shared memory used
+skipping config 320_12_1_16 reason: too much shared memory used
+block_size_x=320, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.5354820251 ms.
+block_size_x=320, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.2804924011 ms.
+block_size_x=320, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.9954879761 ms.
+skipping config 320_15_1_8 reason: too much shared memory used
+skipping config 320_15_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.8606086731 ms.
+block_size_x=352, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 39.3840133667 ms.
+block_size_x=352, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.2801216125 ms.
+skipping config 352_1_1_8 reason: too much shared memory used
+skipping config 352_1_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.9188545227 ms.
+block_size_x=352, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.5944450378 ms.
+block_size_x=352, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.4842430115 ms.
+skipping config 352_2_1_8 reason: too much shared memory used
+skipping config 352_2_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.5945785522 ms.
+block_size_x=352, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.1077819824 ms.
+block_size_x=352, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.588621521 ms.
+skipping config 352_3_1_8 reason: too much shared memory used
+skipping config 352_3_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.074066925 ms.
+block_size_x=352, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.8154754639 ms.
+block_size_x=352, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.9503433228 ms.
+skipping config 352_4_1_8 reason: too much shared memory used
+skipping config 352_4_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.0603523254 ms.
+block_size_x=352, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.5812225342 ms.
+block_size_x=352, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.8949951172 ms.
+skipping config 352_5_1_8 reason: too much shared memory used
+skipping config 352_5_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.2144828796 ms.
+block_size_x=352, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 49.7202362061 ms.
+block_size_x=352, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.8482872009 ms.
+skipping config 352_6_1_8 reason: too much shared memory used
+skipping config 352_6_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.2986686707 ms.
+block_size_x=352, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.0462532043 ms.
+block_size_x=352, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.8629821777 ms.
+skipping config 352_10_1_8 reason: too much shared memory used
+skipping config 352_10_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.5754821777 ms.
+block_size_x=352, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.0127937317 ms.
+block_size_x=352, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.7314048767 ms.
+skipping config 352_12_1_8 reason: too much shared memory used
+skipping config 352_12_1_16 reason: too much shared memory used
+block_size_x=352, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.3225982666 ms.
+block_size_x=352, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.6285247803 ms.
+block_size_x=352, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 42.2783798218 ms.
+skipping config 352_15_1_8 reason: too much shared memory used
+skipping config 352_15_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.3041534424 ms.
+block_size_x=384, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.4033660889 ms.
+block_size_x=384, f_unroll=1, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 36.0422019958 ms.
+skipping config 384_1_1_8 reason: too much shared memory used
+skipping config 384_1_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.9030792236 ms.
+block_size_x=384, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.5028671265 ms.
+block_size_x=384, f_unroll=2, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 37.7623298645 ms.
+skipping config 384_2_1_8 reason: too much shared memory used
+skipping config 384_2_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.1182662964 ms.
+block_size_x=384, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 45.9779327393 ms.
+block_size_x=384, f_unroll=3, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.5724029541 ms.
+skipping config 384_3_1_8 reason: too much shared memory used
+skipping config 384_3_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.214919281 ms.
+block_size_x=384, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.7979911804 ms.
+block_size_x=384, f_unroll=4, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.2762359619 ms.
+skipping config 384_4_1_8 reason: too much shared memory used
+skipping config 384_4_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.3698364258 ms.
+block_size_x=384, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9618751526 ms.
+block_size_x=384, f_unroll=5, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.7870330811 ms.
+skipping config 384_5_1_8 reason: too much shared memory used
+skipping config 384_5_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.5268737793 ms.
+block_size_x=384, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.6768959045 ms.
+block_size_x=384, f_unroll=6, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 39.1655036926 ms.
+skipping config 384_6_1_8 reason: too much shared memory used
+skipping config 384_6_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.8158851624 ms.
+block_size_x=384, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1417793274 ms.
+block_size_x=384, f_unroll=10, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 40.0672065735 ms.
+skipping config 384_10_1_8 reason: too much shared memory used
+skipping config 384_10_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.1337478638 ms.
+block_size_x=384, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3898429871 ms.
+block_size_x=384, f_unroll=12, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 38.4645561218 ms.
+skipping config 384_12_1_8 reason: too much shared memory used
+skipping config 384_12_1_16 reason: too much shared memory used
+block_size_x=384, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.034815979 ms.
+block_size_x=384, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.1522438049 ms.
+block_size_x=384, f_unroll=15, write_sums=1, tile_size_x=4, quadratic_difference_linear took: 41.7636154175 ms.
+skipping config 384_15_1_8 reason: too much shared memory used
+skipping config 384_15_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 56.5130760193 ms.
+block_size_x=416, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 38.6328971863 ms.
+skipping config 416_1_1_4 reason: too much shared memory used
+skipping config 416_1_1_8 reason: too much shared memory used
+skipping config 416_1_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.1638397217 ms.
+block_size_x=416, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 39.09559021 ms.
+skipping config 416_2_1_4 reason: too much shared memory used
+skipping config 416_2_1_8 reason: too much shared memory used
+skipping config 416_2_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.9232063293 ms.
+block_size_x=416, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1062782288 ms.
+skipping config 416_3_1_4 reason: too much shared memory used
+skipping config 416_3_1_8 reason: too much shared memory used
+skipping config 416_3_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.9738311768 ms.
+block_size_x=416, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.2613700867 ms.
+skipping config 416_4_1_4 reason: too much shared memory used
+skipping config 416_4_1_8 reason: too much shared memory used
+skipping config 416_4_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.6533561707 ms.
+block_size_x=416, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.0682365417 ms.
+skipping config 416_5_1_4 reason: too much shared memory used
+skipping config 416_5_1_8 reason: too much shared memory used
+skipping config 416_5_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.7711105347 ms.
+block_size_x=416, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.1363838196 ms.
+skipping config 416_6_1_4 reason: too much shared memory used
+skipping config 416_6_1_8 reason: too much shared memory used
+skipping config 416_6_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.0593917847 ms.
+block_size_x=416, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.5150840759 ms.
+skipping config 416_10_1_4 reason: too much shared memory used
+skipping config 416_10_1_8 reason: too much shared memory used
+skipping config 416_10_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.320639801 ms.
+block_size_x=416, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 50.3732543945 ms.
+skipping config 416_12_1_4 reason: too much shared memory used
+skipping config 416_12_1_8 reason: too much shared memory used
+skipping config 416_12_1_16 reason: too much shared memory used
+block_size_x=416, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.4412872314 ms.
+block_size_x=416, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 51.4511360168 ms.
+skipping config 416_15_1_4 reason: too much shared memory used
+skipping config 416_15_1_8 reason: too much shared memory used
+skipping config 416_15_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.6467720032 ms.
+block_size_x=448, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.9369857788 ms.
+skipping config 448_1_1_4 reason: too much shared memory used
+skipping config 448_1_1_8 reason: too much shared memory used
+skipping config 448_1_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.927960968 ms.
+block_size_x=448, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.436101532 ms.
+skipping config 448_2_1_4 reason: too much shared memory used
+skipping config 448_2_1_8 reason: too much shared memory used
+skipping config 448_2_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.8937789917 ms.
+block_size_x=448, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.1879615784 ms.
+skipping config 448_3_1_4 reason: too much shared memory used
+skipping config 448_3_1_8 reason: too much shared memory used
+skipping config 448_3_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.4741699219 ms.
+block_size_x=448, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.5632064819 ms.
+skipping config 448_4_1_4 reason: too much shared memory used
+skipping config 448_4_1_8 reason: too much shared memory used
+skipping config 448_4_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.5189498901 ms.
+block_size_x=448, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9194366455 ms.
+skipping config 448_5_1_4 reason: too much shared memory used
+skipping config 448_5_1_8 reason: too much shared memory used
+skipping config 448_5_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.9084472656 ms.
+block_size_x=448, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1010238647 ms.
+skipping config 448_6_1_4 reason: too much shared memory used
+skipping config 448_6_1_8 reason: too much shared memory used
+skipping config 448_6_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.5946296692 ms.
+block_size_x=448, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1859901428 ms.
+skipping config 448_10_1_4 reason: too much shared memory used
+skipping config 448_10_1_8 reason: too much shared memory used
+skipping config 448_10_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.0958778381 ms.
+block_size_x=448, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3134017944 ms.
+skipping config 448_12_1_4 reason: too much shared memory used
+skipping config 448_12_1_8 reason: too much shared memory used
+skipping config 448_12_1_16 reason: too much shared memory used
+block_size_x=448, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.2157119751 ms.
+block_size_x=448, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.4415931702 ms.
+skipping config 448_15_1_4 reason: too much shared memory used
+skipping config 448_15_1_8 reason: too much shared memory used
+skipping config 448_15_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 56.6115776062 ms.
+block_size_x=480, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.1249847412 ms.
+skipping config 480_1_1_4 reason: too much shared memory used
+skipping config 480_1_1_8 reason: too much shared memory used
+skipping config 480_1_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.9938621521 ms.
+block_size_x=480, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.8744514465 ms.
+skipping config 480_2_1_4 reason: too much shared memory used
+skipping config 480_2_1_8 reason: too much shared memory used
+skipping config 480_2_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.636517334 ms.
+block_size_x=480, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8472900391 ms.
+skipping config 480_3_1_4 reason: too much shared memory used
+skipping config 480_3_1_8 reason: too much shared memory used
+skipping config 480_3_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.5286010742 ms.
+block_size_x=480, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.2734024048 ms.
+skipping config 480_4_1_4 reason: too much shared memory used
+skipping config 480_4_1_8 reason: too much shared memory used
+skipping config 480_4_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.0991363525 ms.
+block_size_x=480, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8822463989 ms.
+skipping config 480_5_1_4 reason: too much shared memory used
+skipping config 480_5_1_8 reason: too much shared memory used
+skipping config 480_5_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.1963264465 ms.
+block_size_x=480, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1498046875 ms.
+skipping config 480_6_1_4 reason: too much shared memory used
+skipping config 480_6_1_8 reason: too much shared memory used
+skipping config 480_6_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.6502716064 ms.
+block_size_x=480, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.2913787842 ms.
+skipping config 480_10_1_4 reason: too much shared memory used
+skipping config 480_10_1_8 reason: too much shared memory used
+skipping config 480_10_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.3664955139 ms.
+block_size_x=480, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.513785553 ms.
+skipping config 480_12_1_4 reason: too much shared memory used
+skipping config 480_12_1_8 reason: too much shared memory used
+skipping config 480_12_1_16 reason: too much shared memory used
+block_size_x=480, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.0382461548 ms.
+block_size_x=480, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.547052002 ms.
+skipping config 480_15_1_4 reason: too much shared memory used
+skipping config 480_15_1_8 reason: too much shared memory used
+skipping config 480_15_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.841709137 ms.
+block_size_x=512, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.3077896118 ms.
+skipping config 512_1_1_4 reason: too much shared memory used
+skipping config 512_1_1_8 reason: too much shared memory used
+skipping config 512_1_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.6304840088 ms.
+block_size_x=512, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.346572113 ms.
+skipping config 512_2_1_4 reason: too much shared memory used
+skipping config 512_2_1_8 reason: too much shared memory used
+skipping config 512_2_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.4725753784 ms.
+block_size_x=512, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.1322944641 ms.
+skipping config 512_3_1_4 reason: too much shared memory used
+skipping config 512_3_1_8 reason: too much shared memory used
+skipping config 512_3_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.0606719971 ms.
+block_size_x=512, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9809341431 ms.
+skipping config 512_4_1_4 reason: too much shared memory used
+skipping config 512_4_1_8 reason: too much shared memory used
+skipping config 512_4_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.6883781433 ms.
+block_size_x=512, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.4537986755 ms.
+skipping config 512_5_1_4 reason: too much shared memory used
+skipping config 512_5_1_8 reason: too much shared memory used
+skipping config 512_5_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.7564414978 ms.
+block_size_x=512, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.6946250916 ms.
+skipping config 512_6_1_4 reason: too much shared memory used
+skipping config 512_6_1_8 reason: too much shared memory used
+skipping config 512_6_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.5088897705 ms.
+block_size_x=512, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8933242798 ms.
+skipping config 512_10_1_4 reason: too much shared memory used
+skipping config 512_10_1_8 reason: too much shared memory used
+skipping config 512_10_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.6892990112 ms.
+block_size_x=512, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9211639404 ms.
+skipping config 512_12_1_4 reason: too much shared memory used
+skipping config 512_12_1_8 reason: too much shared memory used
+skipping config 512_12_1_16 reason: too much shared memory used
+block_size_x=512, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.8824577332 ms.
+block_size_x=512, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.9580345154 ms.
+skipping config 512_15_1_4 reason: too much shared memory used
+skipping config 512_15_1_8 reason: too much shared memory used
+skipping config 512_15_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.1260032654 ms.
+block_size_x=544, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 38.2787269592 ms.
+skipping config 544_1_1_4 reason: too much shared memory used
+skipping config 544_1_1_8 reason: too much shared memory used
+skipping config 544_1_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.4977981567 ms.
+block_size_x=544, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.3094718933 ms.
+skipping config 544_2_1_4 reason: too much shared memory used
+skipping config 544_2_1_8 reason: too much shared memory used
+skipping config 544_2_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.9523590088 ms.
+block_size_x=544, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.3978820801 ms.
+skipping config 544_3_1_4 reason: too much shared memory used
+skipping config 544_3_1_8 reason: too much shared memory used
+skipping config 544_3_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.4107192993 ms.
+block_size_x=544, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.015032959 ms.
+skipping config 544_4_1_4 reason: too much shared memory used
+skipping config 544_4_1_8 reason: too much shared memory used
+skipping config 544_4_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.8499702454 ms.
+block_size_x=544, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8604354858 ms.
+skipping config 544_5_1_4 reason: too much shared memory used
+skipping config 544_5_1_8 reason: too much shared memory used
+skipping config 544_5_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.5253120422 ms.
+block_size_x=544, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0609146118 ms.
+skipping config 544_6_1_4 reason: too much shared memory used
+skipping config 544_6_1_8 reason: too much shared memory used
+skipping config 544_6_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 50.1211837769 ms.
+block_size_x=544, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.5838653564 ms.
+skipping config 544_10_1_4 reason: too much shared memory used
+skipping config 544_10_1_8 reason: too much shared memory used
+skipping config 544_10_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.383807373 ms.
+block_size_x=544, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3769470215 ms.
+skipping config 544_12_1_4 reason: too much shared memory used
+skipping config 544_12_1_8 reason: too much shared memory used
+skipping config 544_12_1_16 reason: too much shared memory used
+block_size_x=544, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.0408638 ms.
+block_size_x=544, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.4692733765 ms.
+skipping config 544_15_1_4 reason: too much shared memory used
+skipping config 544_15_1_8 reason: too much shared memory used
+skipping config 544_15_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 57.745375824 ms.
+block_size_x=576, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.7848701477 ms.
+skipping config 576_1_1_4 reason: too much shared memory used
+skipping config 576_1_1_8 reason: too much shared memory used
+skipping config 576_1_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.6586242676 ms.
+block_size_x=576, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.8750724792 ms.
+skipping config 576_2_1_4 reason: too much shared memory used
+skipping config 576_2_1_8 reason: too much shared memory used
+skipping config 576_2_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.9585723877 ms.
+block_size_x=576, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.1691261292 ms.
+skipping config 576_3_1_4 reason: too much shared memory used
+skipping config 576_3_1_8 reason: too much shared memory used
+skipping config 576_3_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.9926651001 ms.
+block_size_x=576, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3569915771 ms.
+skipping config 576_4_1_4 reason: too much shared memory used
+skipping config 576_4_1_8 reason: too much shared memory used
+skipping config 576_4_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.1203781128 ms.
+block_size_x=576, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.7630271912 ms.
+skipping config 576_5_1_4 reason: too much shared memory used
+skipping config 576_5_1_8 reason: too much shared memory used
+skipping config 576_5_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.9367362976 ms.
+block_size_x=576, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9776901245 ms.
+skipping config 576_6_1_4 reason: too much shared memory used
+skipping config 576_6_1_8 reason: too much shared memory used
+skipping config 576_6_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.4958396912 ms.
+block_size_x=576, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3821121216 ms.
+skipping config 576_10_1_4 reason: too much shared memory used
+skipping config 576_10_1_8 reason: too much shared memory used
+skipping config 576_10_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.9252227783 ms.
+block_size_x=576, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0169219971 ms.
+skipping config 576_12_1_4 reason: too much shared memory used
+skipping config 576_12_1_8 reason: too much shared memory used
+skipping config 576_12_1_16 reason: too much shared memory used
+block_size_x=576, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.9424766541 ms.
+block_size_x=576, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.0350646973 ms.
+skipping config 576_15_1_4 reason: too much shared memory used
+skipping config 576_15_1_8 reason: too much shared memory used
+skipping config 576_15_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.0347587585 ms.
+block_size_x=608, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.6725311279 ms.
+skipping config 608_1_1_4 reason: too much shared memory used
+skipping config 608_1_1_8 reason: too much shared memory used
+skipping config 608_1_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.6026046753 ms.
+block_size_x=608, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.5789886475 ms.
+skipping config 608_2_1_4 reason: too much shared memory used
+skipping config 608_2_1_8 reason: too much shared memory used
+skipping config 608_2_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.5305030823 ms.
+block_size_x=608, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.7857017517 ms.
+skipping config 608_3_1_4 reason: too much shared memory used
+skipping config 608_3_1_8 reason: too much shared memory used
+skipping config 608_3_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.2969207764 ms.
+block_size_x=608, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9317634583 ms.
+skipping config 608_4_1_4 reason: too much shared memory used
+skipping config 608_4_1_8 reason: too much shared memory used
+skipping config 608_4_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.5747200012 ms.
+block_size_x=608, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0786430359 ms.
+skipping config 608_5_1_4 reason: too much shared memory used
+skipping config 608_5_1_8 reason: too much shared memory used
+skipping config 608_5_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.1946876526 ms.
+block_size_x=608, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.706060791 ms.
+skipping config 608_6_1_4 reason: too much shared memory used
+skipping config 608_6_1_8 reason: too much shared memory used
+skipping config 608_6_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.6478012085 ms.
+block_size_x=608, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3179527283 ms.
+skipping config 608_10_1_4 reason: too much shared memory used
+skipping config 608_10_1_8 reason: too much shared memory used
+skipping config 608_10_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.8201148987 ms.
+block_size_x=608, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.2397949219 ms.
+skipping config 608_12_1_4 reason: too much shared memory used
+skipping config 608_12_1_8 reason: too much shared memory used
+skipping config 608_12_1_16 reason: too much shared memory used
+block_size_x=608, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.0873352051 ms.
+block_size_x=608, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.5949508667 ms.
+skipping config 608_15_1_4 reason: too much shared memory used
+skipping config 608_15_1_8 reason: too much shared memory used
+skipping config 608_15_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.6029510498 ms.
+block_size_x=640, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.7862915039 ms.
+skipping config 640_1_1_4 reason: too much shared memory used
+skipping config 640_1_1_8 reason: too much shared memory used
+skipping config 640_1_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.8514556885 ms.
+block_size_x=640, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 36.5492156982 ms.
+skipping config 640_2_1_4 reason: too much shared memory used
+skipping config 640_2_1_8 reason: too much shared memory used
+skipping config 640_2_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.9494148254 ms.
+block_size_x=640, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.6123901367 ms.
+skipping config 640_3_1_4 reason: too much shared memory used
+skipping config 640_3_1_8 reason: too much shared memory used
+skipping config 640_3_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.9102714539 ms.
+block_size_x=640, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.7588996887 ms.
+skipping config 640_4_1_4 reason: too much shared memory used
+skipping config 640_4_1_8 reason: too much shared memory used
+skipping config 640_4_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.4173309326 ms.
+block_size_x=640, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.2966270447 ms.
+skipping config 640_5_1_4 reason: too much shared memory used
+skipping config 640_5_1_8 reason: too much shared memory used
+skipping config 640_5_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.5446846008 ms.
+block_size_x=640, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.5668861389 ms.
+skipping config 640_6_1_4 reason: too much shared memory used
+skipping config 640_6_1_8 reason: too much shared memory used
+skipping config 640_6_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.2859130859 ms.
+block_size_x=640, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9284988403 ms.
+skipping config 640_10_1_4 reason: too much shared memory used
+skipping config 640_10_1_8 reason: too much shared memory used
+skipping config 640_10_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.2212799072 ms.
+block_size_x=640, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8131011963 ms.
+skipping config 640_12_1_4 reason: too much shared memory used
+skipping config 640_12_1_8 reason: too much shared memory used
+skipping config 640_12_1_16 reason: too much shared memory used
+block_size_x=640, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.7067901611 ms.
+block_size_x=640, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.9917564392 ms.
+skipping config 640_15_1_4 reason: too much shared memory used
+skipping config 640_15_1_8 reason: too much shared memory used
+skipping config 640_15_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.2002105713 ms.
+block_size_x=672, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 38.4101051331 ms.
+skipping config 672_1_1_4 reason: too much shared memory used
+skipping config 672_1_1_8 reason: too much shared memory used
+skipping config 672_1_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.4418754578 ms.
+block_size_x=672, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.7102142334 ms.
+skipping config 672_2_1_4 reason: too much shared memory used
+skipping config 672_2_1_8 reason: too much shared memory used
+skipping config 672_2_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.7440254211 ms.
+block_size_x=672, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.869178009 ms.
+skipping config 672_3_1_4 reason: too much shared memory used
+skipping config 672_3_1_8 reason: too much shared memory used
+skipping config 672_3_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 39.0300033569 ms.
+block_size_x=672, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0316612244 ms.
+skipping config 672_4_1_4 reason: too much shared memory used
+skipping config 672_4_1_8 reason: too much shared memory used
+skipping config 672_4_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.3123207092 ms.
+block_size_x=672, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.544921875 ms.
+skipping config 672_5_1_4 reason: too much shared memory used
+skipping config 672_5_1_8 reason: too much shared memory used
+skipping config 672_5_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.1840957642 ms.
+block_size_x=672, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.6601669312 ms.
+skipping config 672_6_1_4 reason: too much shared memory used
+skipping config 672_6_1_8 reason: too much shared memory used
+skipping config 672_6_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.7334716797 ms.
+block_size_x=672, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8497337341 ms.
+skipping config 672_10_1_4 reason: too much shared memory used
+skipping config 672_10_1_8 reason: too much shared memory used
+skipping config 672_10_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.0494728088 ms.
+block_size_x=672, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.015839386 ms.
+skipping config 672_12_1_4 reason: too much shared memory used
+skipping config 672_12_1_8 reason: too much shared memory used
+skipping config 672_12_1_16 reason: too much shared memory used
+block_size_x=672, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.4728645325 ms.
+block_size_x=672, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.2201782227 ms.
+skipping config 672_15_1_4 reason: too much shared memory used
+skipping config 672_15_1_8 reason: too much shared memory used
+skipping config 672_15_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.8642112732 ms.
+block_size_x=704, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.2499649048 ms.
+skipping config 704_1_1_4 reason: too much shared memory used
+skipping config 704_1_1_8 reason: too much shared memory used
+skipping config 704_1_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.8734458923 ms.
+block_size_x=704, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 38.2308227539 ms.
+skipping config 704_2_1_4 reason: too much shared memory used
+skipping config 704_2_1_8 reason: too much shared memory used
+skipping config 704_2_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.8572029114 ms.
+block_size_x=704, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.5864128113 ms.
+skipping config 704_3_1_4 reason: too much shared memory used
+skipping config 704_3_1_8 reason: too much shared memory used
+skipping config 704_3_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.8948928833 ms.
+block_size_x=704, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.4985275269 ms.
+skipping config 704_4_1_4 reason: too much shared memory used
+skipping config 704_4_1_8 reason: too much shared memory used
+skipping config 704_4_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.8373168945 ms.
+block_size_x=704, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0002700806 ms.
+skipping config 704_5_1_4 reason: too much shared memory used
+skipping config 704_5_1_8 reason: too much shared memory used
+skipping config 704_5_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.0180358887 ms.
+block_size_x=704, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1891265869 ms.
+skipping config 704_6_1_4 reason: too much shared memory used
+skipping config 704_6_1_8 reason: too much shared memory used
+skipping config 704_6_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.8047683716 ms.
+block_size_x=704, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.4085121155 ms.
+skipping config 704_10_1_4 reason: too much shared memory used
+skipping config 704_10_1_8 reason: too much shared memory used
+skipping config 704_10_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.6478973389 ms.
+block_size_x=704, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3933570862 ms.
+skipping config 704_12_1_4 reason: too much shared memory used
+skipping config 704_12_1_8 reason: too much shared memory used
+skipping config 704_12_1_16 reason: too much shared memory used
+block_size_x=704, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.8394622803 ms.
+block_size_x=704, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.4342147827 ms.
+skipping config 704_15_1_4 reason: too much shared memory used
+skipping config 704_15_1_8 reason: too much shared memory used
+skipping config 704_15_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 54.6544708252 ms.
+block_size_x=736, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 39.1839683533 ms.
+skipping config 736_1_1_4 reason: too much shared memory used
+skipping config 736_1_1_8 reason: too much shared memory used
+skipping config 736_1_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.541645813 ms.
+block_size_x=736, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.7524726868 ms.
+skipping config 736_2_1_4 reason: too much shared memory used
+skipping config 736_2_1_8 reason: too much shared memory used
+skipping config 736_2_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.1314369202 ms.
+block_size_x=736, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0587966919 ms.
+skipping config 736_3_1_4 reason: too much shared memory used
+skipping config 736_3_1_8 reason: too much shared memory used
+skipping config 736_3_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.3157051086 ms.
+block_size_x=736, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.7015617371 ms.
+skipping config 736_4_1_4 reason: too much shared memory used
+skipping config 736_4_1_8 reason: too much shared memory used
+skipping config 736_4_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.228780365 ms.
+block_size_x=736, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1408454895 ms.
+skipping config 736_5_1_4 reason: too much shared memory used
+skipping config 736_5_1_8 reason: too much shared memory used
+skipping config 736_5_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.9075653076 ms.
+block_size_x=736, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.2118278503 ms.
+skipping config 736_6_1_4 reason: too much shared memory used
+skipping config 736_6_1_8 reason: too much shared memory used
+skipping config 736_6_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.9152000427 ms.
+block_size_x=736, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.3095748901 ms.
+skipping config 736_10_1_4 reason: too much shared memory used
+skipping config 736_10_1_8 reason: too much shared memory used
+skipping config 736_10_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.7451652527 ms.
+block_size_x=736, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.1806846619 ms.
+skipping config 736_12_1_4 reason: too much shared memory used
+skipping config 736_12_1_8 reason: too much shared memory used
+skipping config 736_12_1_16 reason: too much shared memory used
+block_size_x=736, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.1057731628 ms.
+block_size_x=736, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.0574523926 ms.
+skipping config 736_15_1_4 reason: too much shared memory used
+skipping config 736_15_1_8 reason: too much shared memory used
+skipping config 736_15_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.6156799316 ms.
+block_size_x=768, f_unroll=1, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 37.7283584595 ms.
+skipping config 768_1_1_4 reason: too much shared memory used
+skipping config 768_1_1_8 reason: too much shared memory used
+skipping config 768_1_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.6408256531 ms.
+block_size_x=768, f_unroll=2, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 38.1217536926 ms.
+skipping config 768_2_1_4 reason: too much shared memory used
+skipping config 768_2_1_8 reason: too much shared memory used
+skipping config 768_2_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.3140220642 ms.
+block_size_x=768, f_unroll=3, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.2817474365 ms.
+skipping config 768_3_1_4 reason: too much shared memory used
+skipping config 768_3_1_8 reason: too much shared memory used
+skipping config 768_3_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 40.7318519592 ms.
+block_size_x=768, f_unroll=4, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.2658943176 ms.
+skipping config 768_4_1_4 reason: too much shared memory used
+skipping config 768_4_1_8 reason: too much shared memory used
+skipping config 768_4_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.4766075134 ms.
+block_size_x=768, f_unroll=5, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.8290878296 ms.
+skipping config 768_5_1_4 reason: too much shared memory used
+skipping config 768_5_1_8 reason: too much shared memory used
+skipping config 768_5_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.5235839844 ms.
+block_size_x=768, f_unroll=6, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.103263855 ms.
+skipping config 768_6_1_4 reason: too much shared memory used
+skipping config 768_6_1_8 reason: too much shared memory used
+skipping config 768_6_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.814540863 ms.
+block_size_x=768, f_unroll=10, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 47.0945030212 ms.
+skipping config 768_10_1_4 reason: too much shared memory used
+skipping config 768_10_1_8 reason: too much shared memory used
+skipping config 768_10_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.8279678345 ms.
+block_size_x=768, f_unroll=12, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 46.9280578613 ms.
+skipping config 768_12_1_4 reason: too much shared memory used
+skipping config 768_12_1_8 reason: too much shared memory used
+skipping config 768_12_1_16 reason: too much shared memory used
+block_size_x=768, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.1845756531 ms.
+block_size_x=768, f_unroll=15, write_sums=1, tile_size_x=2, quadratic_difference_linear took: 48.2524932861 ms.
+skipping config 768_15_1_4 reason: too much shared memory used
+skipping config 768_15_1_8 reason: too much shared memory used
+skipping config 768_15_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.7993591309 ms.
+skipping config 800_1_1_2 reason: too much shared memory used
+skipping config 800_1_1_4 reason: too much shared memory used
+skipping config 800_1_1_8 reason: too much shared memory used
+skipping config 800_1_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.0462081909 ms.
+skipping config 800_2_1_2 reason: too much shared memory used
+skipping config 800_2_1_4 reason: too much shared memory used
+skipping config 800_2_1_8 reason: too much shared memory used
+skipping config 800_2_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.2556480408 ms.
+skipping config 800_3_1_2 reason: too much shared memory used
+skipping config 800_3_1_4 reason: too much shared memory used
+skipping config 800_3_1_8 reason: too much shared memory used
+skipping config 800_3_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.6808570862 ms.
+skipping config 800_4_1_2 reason: too much shared memory used
+skipping config 800_4_1_4 reason: too much shared memory used
+skipping config 800_4_1_8 reason: too much shared memory used
+skipping config 800_4_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.957056427 ms.
+skipping config 800_5_1_2 reason: too much shared memory used
+skipping config 800_5_1_4 reason: too much shared memory used
+skipping config 800_5_1_8 reason: too much shared memory used
+skipping config 800_5_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.6391365051 ms.
+skipping config 800_6_1_2 reason: too much shared memory used
+skipping config 800_6_1_4 reason: too much shared memory used
+skipping config 800_6_1_8 reason: too much shared memory used
+skipping config 800_6_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.4757621765 ms.
+skipping config 800_10_1_2 reason: too much shared memory used
+skipping config 800_10_1_4 reason: too much shared memory used
+skipping config 800_10_1_8 reason: too much shared memory used
+skipping config 800_10_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.5760513306 ms.
+skipping config 800_12_1_2 reason: too much shared memory used
+skipping config 800_12_1_4 reason: too much shared memory used
+skipping config 800_12_1_8 reason: too much shared memory used
+skipping config 800_12_1_16 reason: too much shared memory used
+block_size_x=800, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.2008514404 ms.
+skipping config 800_15_1_2 reason: too much shared memory used
+skipping config 800_15_1_4 reason: too much shared memory used
+skipping config 800_15_1_8 reason: too much shared memory used
+skipping config 800_15_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 55.4466049194 ms.
+skipping config 832_1_1_2 reason: too much shared memory used
+skipping config 832_1_1_4 reason: too much shared memory used
+skipping config 832_1_1_8 reason: too much shared memory used
+skipping config 832_1_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.7040313721 ms.
+skipping config 832_2_1_2 reason: too much shared memory used
+skipping config 832_2_1_4 reason: too much shared memory used
+skipping config 832_2_1_8 reason: too much shared memory used
+skipping config 832_2_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.9986618042 ms.
+skipping config 832_3_1_2 reason: too much shared memory used
+skipping config 832_3_1_4 reason: too much shared memory used
+skipping config 832_3_1_8 reason: too much shared memory used
+skipping config 832_3_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.8336837769 ms.
+skipping config 832_4_1_2 reason: too much shared memory used
+skipping config 832_4_1_4 reason: too much shared memory used
+skipping config 832_4_1_8 reason: too much shared memory used
+skipping config 832_4_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.8623939514 ms.
+skipping config 832_5_1_2 reason: too much shared memory used
+skipping config 832_5_1_4 reason: too much shared memory used
+skipping config 832_5_1_8 reason: too much shared memory used
+skipping config 832_5_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.7771453857 ms.
+skipping config 832_6_1_2 reason: too much shared memory used
+skipping config 832_6_1_4 reason: too much shared memory used
+skipping config 832_6_1_8 reason: too much shared memory used
+skipping config 832_6_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.774080658 ms.
+skipping config 832_10_1_2 reason: too much shared memory used
+skipping config 832_10_1_4 reason: too much shared memory used
+skipping config 832_10_1_8 reason: too much shared memory used
+skipping config 832_10_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.641292572 ms.
+skipping config 832_12_1_2 reason: too much shared memory used
+skipping config 832_12_1_4 reason: too much shared memory used
+skipping config 832_12_1_8 reason: too much shared memory used
+skipping config 832_12_1_16 reason: too much shared memory used
+block_size_x=832, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.4536514282 ms.
+skipping config 832_15_1_2 reason: too much shared memory used
+skipping config 832_15_1_4 reason: too much shared memory used
+skipping config 832_15_1_8 reason: too much shared memory used
+skipping config 832_15_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.7968452454 ms.
+skipping config 864_1_1_2 reason: too much shared memory used
+skipping config 864_1_1_4 reason: too much shared memory used
+skipping config 864_1_1_8 reason: too much shared memory used
+skipping config 864_1_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.5681671143 ms.
+skipping config 864_2_1_2 reason: too much shared memory used
+skipping config 864_2_1_4 reason: too much shared memory used
+skipping config 864_2_1_8 reason: too much shared memory used
+skipping config 864_2_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.072403717 ms.
+skipping config 864_3_1_2 reason: too much shared memory used
+skipping config 864_3_1_4 reason: too much shared memory used
+skipping config 864_3_1_8 reason: too much shared memory used
+skipping config 864_3_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.5834495544 ms.
+skipping config 864_4_1_2 reason: too much shared memory used
+skipping config 864_4_1_4 reason: too much shared memory used
+skipping config 864_4_1_8 reason: too much shared memory used
+skipping config 864_4_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.5270080566 ms.
+skipping config 864_5_1_2 reason: too much shared memory used
+skipping config 864_5_1_4 reason: too much shared memory used
+skipping config 864_5_1_8 reason: too much shared memory used
+skipping config 864_5_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.1576766968 ms.
+skipping config 864_6_1_2 reason: too much shared memory used
+skipping config 864_6_1_4 reason: too much shared memory used
+skipping config 864_6_1_8 reason: too much shared memory used
+skipping config 864_6_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.2856376648 ms.
+skipping config 864_10_1_2 reason: too much shared memory used
+skipping config 864_10_1_4 reason: too much shared memory used
+skipping config 864_10_1_8 reason: too much shared memory used
+skipping config 864_10_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.4455619812 ms.
+skipping config 864_12_1_2 reason: too much shared memory used
+skipping config 864_12_1_4 reason: too much shared memory used
+skipping config 864_12_1_8 reason: too much shared memory used
+skipping config 864_12_1_16 reason: too much shared memory used
+block_size_x=864, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.6108093262 ms.
+skipping config 864_15_1_2 reason: too much shared memory used
+skipping config 864_15_1_4 reason: too much shared memory used
+skipping config 864_15_1_8 reason: too much shared memory used
+skipping config 864_15_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 54.2764472961 ms.
+skipping config 896_1_1_2 reason: too much shared memory used
+skipping config 896_1_1_4 reason: too much shared memory used
+skipping config 896_1_1_8 reason: too much shared memory used
+skipping config 896_1_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.5330368042 ms.
+skipping config 896_2_1_2 reason: too much shared memory used
+skipping config 896_2_1_4 reason: too much shared memory used
+skipping config 896_2_1_8 reason: too much shared memory used
+skipping config 896_2_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.7460479736 ms.
+skipping config 896_3_1_2 reason: too much shared memory used
+skipping config 896_3_1_4 reason: too much shared memory used
+skipping config 896_3_1_8 reason: too much shared memory used
+skipping config 896_3_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.6310661316 ms.
+skipping config 896_4_1_2 reason: too much shared memory used
+skipping config 896_4_1_4 reason: too much shared memory used
+skipping config 896_4_1_8 reason: too much shared memory used
+skipping config 896_4_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.8003334045 ms.
+skipping config 896_5_1_2 reason: too much shared memory used
+skipping config 896_5_1_4 reason: too much shared memory used
+skipping config 896_5_1_8 reason: too much shared memory used
+skipping config 896_5_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.4436225891 ms.
+skipping config 896_6_1_2 reason: too much shared memory used
+skipping config 896_6_1_4 reason: too much shared memory used
+skipping config 896_6_1_8 reason: too much shared memory used
+skipping config 896_6_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.6167930603 ms.
+skipping config 896_10_1_2 reason: too much shared memory used
+skipping config 896_10_1_4 reason: too much shared memory used
+skipping config 896_10_1_8 reason: too much shared memory used
+skipping config 896_10_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.9751678467 ms.
+skipping config 896_12_1_2 reason: too much shared memory used
+skipping config 896_12_1_4 reason: too much shared memory used
+skipping config 896_12_1_8 reason: too much shared memory used
+skipping config 896_12_1_16 reason: too much shared memory used
+block_size_x=896, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.8251586914 ms.
+skipping config 896_15_1_2 reason: too much shared memory used
+skipping config 896_15_1_4 reason: too much shared memory used
+skipping config 896_15_1_8 reason: too much shared memory used
+skipping config 896_15_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 51.8246139526 ms.
+skipping config 928_1_1_2 reason: too much shared memory used
+skipping config 928_1_1_4 reason: too much shared memory used
+skipping config 928_1_1_8 reason: too much shared memory used
+skipping config 928_1_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.5037117004 ms.
+skipping config 928_2_1_2 reason: too much shared memory used
+skipping config 928_2_1_4 reason: too much shared memory used
+skipping config 928_2_1_8 reason: too much shared memory used
+skipping config 928_2_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.5444488525 ms.
+skipping config 928_3_1_2 reason: too much shared memory used
+skipping config 928_3_1_4 reason: too much shared memory used
+skipping config 928_3_1_8 reason: too much shared memory used
+skipping config 928_3_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.416191864 ms.
+skipping config 928_4_1_2 reason: too much shared memory used
+skipping config 928_4_1_4 reason: too much shared memory used
+skipping config 928_4_1_8 reason: too much shared memory used
+skipping config 928_4_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.3571456909 ms.
+skipping config 928_5_1_2 reason: too much shared memory used
+skipping config 928_5_1_4 reason: too much shared memory used
+skipping config 928_5_1_8 reason: too much shared memory used
+skipping config 928_5_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.8755455017 ms.
+skipping config 928_6_1_2 reason: too much shared memory used
+skipping config 928_6_1_4 reason: too much shared memory used
+skipping config 928_6_1_8 reason: too much shared memory used
+skipping config 928_6_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 49.2651519775 ms.
+skipping config 928_10_1_2 reason: too much shared memory used
+skipping config 928_10_1_4 reason: too much shared memory used
+skipping config 928_10_1_8 reason: too much shared memory used
+skipping config 928_10_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.8922691345 ms.
+skipping config 928_12_1_2 reason: too much shared memory used
+skipping config 928_12_1_4 reason: too much shared memory used
+skipping config 928_12_1_8 reason: too much shared memory used
+skipping config 928_12_1_16 reason: too much shared memory used
+block_size_x=928, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.3451393127 ms.
+skipping config 928_15_1_2 reason: too much shared memory used
+skipping config 928_15_1_4 reason: too much shared memory used
+skipping config 928_15_1_8 reason: too much shared memory used
+skipping config 928_15_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 57.3692672729 ms.
+skipping config 960_1_1_2 reason: too much shared memory used
+skipping config 960_1_1_4 reason: too much shared memory used
+skipping config 960_1_1_8 reason: too much shared memory used
+skipping config 960_1_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.7430145264 ms.
+skipping config 960_2_1_2 reason: too much shared memory used
+skipping config 960_2_1_4 reason: too much shared memory used
+skipping config 960_2_1_8 reason: too much shared memory used
+skipping config 960_2_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.9936126709 ms.
+skipping config 960_3_1_2 reason: too much shared memory used
+skipping config 960_3_1_4 reason: too much shared memory used
+skipping config 960_3_1_8 reason: too much shared memory used
+skipping config 960_3_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 47.9436668396 ms.
+skipping config 960_4_1_2 reason: too much shared memory used
+skipping config 960_4_1_4 reason: too much shared memory used
+skipping config 960_4_1_8 reason: too much shared memory used
+skipping config 960_4_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.3554298401 ms.
+skipping config 960_5_1_2 reason: too much shared memory used
+skipping config 960_5_1_4 reason: too much shared memory used
+skipping config 960_5_1_8 reason: too much shared memory used
+skipping config 960_5_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.9693557739 ms.
+skipping config 960_6_1_2 reason: too much shared memory used
+skipping config 960_6_1_4 reason: too much shared memory used
+skipping config 960_6_1_8 reason: too much shared memory used
+skipping config 960_6_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.1974533081 ms.
+skipping config 960_10_1_2 reason: too much shared memory used
+skipping config 960_10_1_4 reason: too much shared memory used
+skipping config 960_10_1_8 reason: too much shared memory used
+skipping config 960_10_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 48.23723526 ms.
+skipping config 960_12_1_2 reason: too much shared memory used
+skipping config 960_12_1_4 reason: too much shared memory used
+skipping config 960_12_1_8 reason: too much shared memory used
+skipping config 960_12_1_16 reason: too much shared memory used
+block_size_x=960, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.0002944946 ms.
+skipping config 960_15_1_2 reason: too much shared memory used
+skipping config 960_15_1_4 reason: too much shared memory used
+skipping config 960_15_1_8 reason: too much shared memory used
+skipping config 960_15_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 52.0125953674 ms.
+skipping config 992_1_1_2 reason: too much shared memory used
+skipping config 992_1_1_4 reason: too much shared memory used
+skipping config 992_1_1_8 reason: too much shared memory used
+skipping config 992_1_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 45.8255554199 ms.
+skipping config 992_2_1_2 reason: too much shared memory used
+skipping config 992_2_1_4 reason: too much shared memory used
+skipping config 992_2_1_8 reason: too much shared memory used
+skipping config 992_2_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.374848175 ms.
+skipping config 992_3_1_2 reason: too much shared memory used
+skipping config 992_3_1_4 reason: too much shared memory used
+skipping config 992_3_1_8 reason: too much shared memory used
+skipping config 992_3_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 42.4803451538 ms.
+skipping config 992_4_1_2 reason: too much shared memory used
+skipping config 992_4_1_4 reason: too much shared memory used
+skipping config 992_4_1_8 reason: too much shared memory used
+skipping config 992_4_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.5272254944 ms.
+skipping config 992_5_1_2 reason: too much shared memory used
+skipping config 992_5_1_4 reason: too much shared memory used
+skipping config 992_5_1_8 reason: too much shared memory used
+skipping config 992_5_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.4175102234 ms.
+skipping config 992_6_1_2 reason: too much shared memory used
+skipping config 992_6_1_4 reason: too much shared memory used
+skipping config 992_6_1_8 reason: too much shared memory used
+skipping config 992_6_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.0081466675 ms.
+skipping config 992_10_1_2 reason: too much shared memory used
+skipping config 992_10_1_4 reason: too much shared memory used
+skipping config 992_10_1_8 reason: too much shared memory used
+skipping config 992_10_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 43.0250167847 ms.
+skipping config 992_12_1_2 reason: too much shared memory used
+skipping config 992_12_1_4 reason: too much shared memory used
+skipping config 992_12_1_8 reason: too much shared memory used
+skipping config 992_12_1_16 reason: too much shared memory used
+block_size_x=992, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.6581565857 ms.
+skipping config 992_15_1_2 reason: too much shared memory used
+skipping config 992_15_1_4 reason: too much shared memory used
+skipping config 992_15_1_8 reason: too much shared memory used
+skipping config 992_15_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=1, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 53.2109947205 ms.
+skipping config 1024_1_1_2 reason: too much shared memory used
+skipping config 1024_1_1_4 reason: too much shared memory used
+skipping config 1024_1_1_8 reason: too much shared memory used
+skipping config 1024_1_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=2, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 44.569152832 ms.
+skipping config 1024_2_1_2 reason: too much shared memory used
+skipping config 1024_2_1_4 reason: too much shared memory used
+skipping config 1024_2_1_8 reason: too much shared memory used
+skipping config 1024_2_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=3, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.7607292175 ms.
+skipping config 1024_3_1_2 reason: too much shared memory used
+skipping config 1024_3_1_4 reason: too much shared memory used
+skipping config 1024_3_1_8 reason: too much shared memory used
+skipping config 1024_3_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=4, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.4515647888 ms.
+skipping config 1024_4_1_2 reason: too much shared memory used
+skipping config 1024_4_1_4 reason: too much shared memory used
+skipping config 1024_4_1_8 reason: too much shared memory used
+skipping config 1024_4_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=5, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.5103103638 ms.
+skipping config 1024_5_1_2 reason: too much shared memory used
+skipping config 1024_5_1_4 reason: too much shared memory used
+skipping config 1024_5_1_8 reason: too much shared memory used
+skipping config 1024_5_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=6, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.7258171082 ms.
+skipping config 1024_6_1_2 reason: too much shared memory used
+skipping config 1024_6_1_4 reason: too much shared memory used
+skipping config 1024_6_1_8 reason: too much shared memory used
+skipping config 1024_6_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=10, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 46.1425727844 ms.
+skipping config 1024_10_1_2 reason: too much shared memory used
+skipping config 1024_10_1_4 reason: too much shared memory used
+skipping config 1024_10_1_8 reason: too much shared memory used
+skipping config 1024_10_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=12, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.3388549805 ms.
+skipping config 1024_12_1_2 reason: too much shared memory used
+skipping config 1024_12_1_4 reason: too much shared memory used
+skipping config 1024_12_1_8 reason: too much shared memory used
+skipping config 1024_12_1_16 reason: too much shared memory used
+block_size_x=1024, f_unroll=15, write_sums=1, tile_size_x=1, quadratic_difference_linear took: 41.7832580566 ms.
+skipping config 1024_15_1_2 reason: too much shared memory used
+skipping config 1024_15_1_4 reason: too much shared memory used
+skipping config 1024_15_1_8 reason: too much shared memory used
+skipping config 1024_15_1_16 reason: too much shared memory used
+best performing configuration:  384_1_1_4 took: 36.0422019958 ms.
