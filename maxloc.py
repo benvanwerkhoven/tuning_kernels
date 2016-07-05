@@ -13,11 +13,11 @@ size = 32 * 1024
 num_blocks = numpy.int32(8)
 problem_size = ("num_blocks", 1)
 
-x = numpy.random.rand(size).astype(numpy.float32)
+x = (numpy.random.rand(size) * 1e12).astype(numpy.int32)
 
 max_loc = numpy.zeros(num_blocks).astype(numpy.int32)
-max_temp = numpy.zeros(num_blocks).astype(numpy.float32)
-locations = numpy.zeros(size).astype(numpy.float32)
+max_temp = numpy.zeros(num_blocks).astype(numpy.int32)
+locations = numpy.zeros(size).astype(numpy.int32)
 use_index = numpy.int32(1)
 n = numpy.int32(size)
 

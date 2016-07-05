@@ -5,13 +5,10 @@
 #endif 
 
 #if (vector==1)
-#define floatvector float
 #define intvector int
 #elif (vector == 2)
-#define floatvector float2
 #define intvector int2
 #elif (vector == 4)
-#define floatvector float4
 #define intvector int4
 #endif
 
@@ -29,16 +26,16 @@
 
 #define SET_LOC(loc, i) \
 
-__global__ void max_loc(int *max_idx, float *max_val, intvector *location, floatvector *array, int use_index, int n) {
+__global__ void max_loc(int *max_idx, int *max_val, intvector *location, intvector *array, int use_index, int n) {
     int ti = threadIdx.x;
     int x = blockIdx.x * block_size_x + threadIdx.x;
     int step_size = num_blocks * block_size_x;
-    float lmax = 0.0f;
+    int lmax = 0.0f;
     int lidx = 0;
 
     //cooperatively iterate over input array with all thread blocks
     for (int i=x; i<n/vector; i+=step_size) {
-        floatvector v = array[i];
+        intvector v = array[i];
         intvector loc;
         if (use_index == 0) {
             loc = location[i];
@@ -70,7 +67,7 @@ __global__ void max_loc(int *max_idx, float *max_val, intvector *location, float
     }
     
     //reduce sum to single value (or last 32 in case of use_shuffle)
-    __shared__ float sh_max[block_size_x];
+    __shared__ int sh_max[block_size_x];
     __shared__ int sh_idx[block_size_x];
     sh_max[ti] = lmax;
     sh_idx[ti] = lidx;
@@ -90,7 +87,7 @@ __global__ void max_loc(int *max_idx, float *max_val, intvector *location, float
         lidx = sh_idx[ti];
         #pragma unroll
         for (unsigned int s=16; s>0; s>>=1) {
-            float v = __shfl_down(lmax, s);
+            int v = __shfl_down(lmax, s);
             int i = __shfl_down(lidx, s);
             MAX_LOC(lmax, v, lidx, i)
         }
