@@ -25,7 +25,7 @@ print (problem_size)
 x = np.random.normal(0.2, 0.1, N).astype(np.float32)
 y = np.random.normal(0.2, 0.1, N).astype(np.float32)
 z = np.random.normal(0.2, 0.1, N).astype(np.float32)
-ct = 1000*np.random.normal(0.5, 0.06, N).astype(np.float32)
+ct = 2000*np.random.normal(0.5, 0.06, N).astype(np.float32)
 
 correlations = np.zeros((sliding_window_width, N), 'uint8')
 sums = np.zeros(N).astype(np.int32)
@@ -56,22 +56,30 @@ result = run_kernel("quadratic_difference", kernel_string, problem_size, args_ol
 
 
 #now tune the quadratic_difference_linear kernel
-kernel_name = "quadratic_difference_linear"
+kernel_name = "quadratic_difference_full_shfl"
+
+
+
+args = [col_idx, prefix_sums, sums, N, sliding_window_width, x, y, z, ct]
 
 
 problem_size = (int(N), 1)
 
 tune_params = dict()
 tune_params["block_size_x"] = [32*i for i in range(1,33)] #multiples of 32
-tune_params["f_unroll"] = [i for i in range(1,20) if 1500/float(i) == 1500//i] #divisors of 1500
-tune_params["tile_size_x"] = [2**i for i in range(5)] #powers of 2
+#tune_params["f_unroll"] = [i for i in range(1,20) if 1500/float(i) == 1500//i] #divisors of 1500
+#tune_params["tile_size_x"] = [2**i for i in range(5)] #powers of 2
 
-tune_params["write_sums"] = [1]
-#tune_params["block_size_x"] = [2**i for i in range(7,11)]
+#tune_params["write_sums"] = [1]
+tune_params["block_size_x"] = [2**i for i in range(7,11)]
 #tune_params["tile_size_x"] = [1, 2, 4, 8, 16]
+
 #tune_params["shmem"] = [0, 1]
-#tune_params["read_only"] = [0]
+tune_params["read_only"] = [0, 1]
 #tune_params["use_if"] = [1]
+tune_params["write_sums"] = [0]
+tune_params["write_spm"] = [1]
+
 
 
 if "tile_size_x" in tune_params:

@@ -145,8 +145,8 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
                         float diffy  = l_y[ti] - sh_y[i+ti*block_size_x+j];
                         float diffz  = l_z[ti] - sh_z[i+ti*block_size_x+j];
 
-                        uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
                         if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                            uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
                             correlations[pos] = 1;
                             #if write_sums == 1
                             sum[ti] += 1;
@@ -191,8 +191,8 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
                         float diffy  = l_y[ti] - sh_y[i+ti*block_size_x+j];
                         float diffz  = l_z[ti] - sh_z[i+ti*block_size_x+j];
 
-                        uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
                         if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                            uint64_t pos = j * ((uint64_t)N) + (bx+i+ti*block_size_x);
                             correlations[pos] = 1;
                             #if write_sums == 1
                             sum[ti] += 1;
@@ -231,7 +231,7 @@ __global__ void quadratic_difference_linear(char *__restrict__ correlations, int
  * Tuning parameters supported are 'block_size_x', 'shem' [0,1], 'read_only' [0,1], 'use_if' [0,1]
  *
  */
-__global__ void quadratic_difference_linear_shfl(char *__restrict__ correlations, int N, int sliding_window_width,
+__global__ void quadratic_difference_linear_shfl(char *__restrict__ correlations, int *sums, int N, int sliding_window_width,
         const float *__restrict__ x, const float *__restrict__ y, const float *__restrict__ z, const float *__restrict__ ct) {
 
     int tx = threadIdx.x;
@@ -286,17 +286,24 @@ __global__ void quadratic_difference_linear_shfl(char *__restrict__ correlations
                 float diffx  = x_i - sh_x[i+j];
                 float diffy  = y_i - sh_y[i+j];
                 float diffz  = z_i - sh_z[i+j];
-                uint64_t pos = j * ((uint64_t)N) + (bx+i);
                 #elif shmem == 0
                 float diffct = ct_i - LDG(ct,i+j);
                 float diffx = x_i - LDG(x,i+j);
                 float diffy = y_i - LDG(y,i+j);
                 float diffz = z_i - LDG(z,i+j);
-                uint64_t pos = j * ((uint64_t)N) + (i);
                 #endif
 
                 #if use_if == 1
                 if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                #endif
+
+                #if shmem == 1
+                uint64_t pos = j * ((uint64_t)N) + (bx+i);
+                #elif shmem == 0
+                uint64_t pos = j * ((uint64_t)N) + (i);
+                #endif
+
+                #if use_if == 1
                     correlations[pos] = 1;
                 }
                 #elif use_if == 0
@@ -387,31 +394,160 @@ __global__ void quadratic_difference_linear_shfl(char *__restrict__ correlations
 
             }
 
+    }
+}
+
+
+
+#ifndef write_spm
+#define write_spm 0
+#endif
 
 /*
+ * This kernel uses warp-shuffle instructions to re-use many of
+ * the input values in registers and reduce the pressure on shared memory.
+ * However, it does this so drastically that shared memory is hardly needed anymore.
+ *
+ * Tuning parameters supported are 'block_size_x', 'read_only' [0,1], 'use_if' [0,1]
+ *
+ */
+__global__ void quadratic_difference_full_shfl(int *__restrict__ col_idx, int *__restrict__ prefix_sums, int *sums, int N, int sliding_window_width,
+        const float *__restrict__ x, const float *__restrict__ y, const float *__restrict__ z, const float *__restrict__ ct) {
+
+    int tx = threadIdx.x;
+    int bx = blockIdx.x * block_size_x;
+
+    #if write_sums == 1
+    int sum = 0;
+    #endif
+    #if write_spm == 1
+    int offset = 0;
+    #endif
+
+    float ct_i = 0.0f;
+    float x_i = 0.0f;
+    float y_i = 0.0f;
+    float z_i = 0.0f;
+
+    if (bx+tx < N) {
+        ct_i = LDG(ct,bx+tx);
+        x_i = LDG(x,bx+tx);
+        y_i = LDG(y,bx+tx);
+        z_i = LDG(z,bx+tx);
+
+        #if write_spm == 1
+        if (bx+tx > 0) {
+            offset = prefix_sums[bx+tx-1];
         }
-        //same as above but with bounds checks for last few blocks
-        else {
+        #endif
+    }
 
-            for (int j=0; j < window_width; j++) {
+        int i = bx + tx - window_width;
 
-                if (bx+i+j >= N) { return; }
+            int laneid = tx & (32-1);
 
-                float diffct = ct_i - sh_ct[i+j];
-                float diffx  = x_i - sh_x[i+j];
-                float diffy  = y_i - sh_y[i+j];
-                float diffz  = z_i - sh_z[i+j];
+            for (int j=0; j < 32-laneid; j++) {
+                if (i+j >= 0) {
 
-                uint64_t pos = j * ((uint64_t)N) + (bx+i);
+                float diffct = ct_i - LDG(ct,i+j);
+                float diffx = x_i - LDG(x,i+j);
+                float diffy = y_i - LDG(y,i+j);
+                float diffz = z_i - LDG(z,i+j);
+
                 if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
-                    correlations[pos] = 1;
+                    //uint64_t pos = j * ((uint64_t)N) + (bx+tx);
+                    //correlations[pos] = 1;
+                    #if write_sums == 1
+                    sum++;
+                    #endif
+                    #if write_spm == 1
+                    col_idx[offset++] = i+j;
+                    #endif
+                }
+
+                }
+            }
+
+            int j;
+
+                
+            #if f_unroll == 2
+            #pragma unroll 2
+            #elif f_unroll == 4
+            #pragma unroll 4
+            #endif
+            for (j=32; j < window_width*2-32; j+=32) {
+
+                float ct_j = 0.0f;
+                float x_j = 0.0f;
+                float y_j = 0.0f;
+                float z_j = 0.0f;
+
+                if (i+j >= 0 && i+j<N) {
+                    ct_j = LDG(ct,i+j);
+                    x_j = LDG(x,i+j);
+                    y_j = LDG(y,i+j);
+                    z_j = LDG(z,i+j);
+                }
+
+                for (int d=1; d<33; d++) {
+                    ct_j = __shfl(ct_j, laneid+1);
+                    x_j = __shfl(x_j, laneid+1);
+                    y_j = __shfl(y_j, laneid+1);
+                    z_j = __shfl(z_j, laneid+1);
+
+                    float diffct = ct_i - ct_j;
+                    float diffx  = x_i - x_j;
+                    float diffy  = y_i - y_j;
+                    float diffz  = z_i - z_j;
+
+                    if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                        //uint64_t pos = (j+d+c) * ((uint64_t)N) + (bx+tx);
+                        //correlations[pos] = 1;
+                        #if write_sums == 1
+                        sum++;
+                        #endif
+                        #if write_spm == 1
+                        int c = laneid+d > 31 ? -32 : 0;
+                        col_idx[offset++] = i+j+d+c;
+                        #endif
+                    }
+
                 }
 
             }
 
-        }
-*/
+
+            j-=laneid;
+            for (; j < window_width*2; j++) {
+                if (i+j >= 0 && i+j < N) {
+
+                float diffct = ct_i - LDG(ct,i+j);
+                float diffx = x_i - LDG(x,i+j);
+                float diffy = y_i - LDG(y,i+j);
+                float diffz = z_i - LDG(z,i+j);
+
+                if (diffct * diffct < diffx * diffx + diffy * diffy + diffz * diffz) {
+                    //uint64_t pos = j * ((uint64_t)N) + (bx+tx);
+                    //correlations[pos] = 1;
+                    #if write_sums == 1
+                    sum++;
+                    #endif
+                    #if write_spm == 1
+                    col_idx[offset++] = i+j;
+                    #endif
+                }
+
+                }
+            }
+
+
+    #if write_sums == 1
+    if (bx+tx < N) {
+        sums[bx+tx] = sum;
     }
+    #endif
+
 }
 
 
