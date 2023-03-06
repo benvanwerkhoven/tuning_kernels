@@ -7,15 +7,16 @@ with open('prefixsum.cu', 'r') as f:
     kernel_string = f.read()
 
 tune_params = dict()
-tune_params["block_size_x"] = [64]
+tune_params["block_size_x"] = [32]
+tune_params["use_asm"] = [1, 0]
 
-size = 1024
+size = 1024*1024*1024
 problem_size = (size, 1)
 max_blocks = int(numpy.ceil(size/float(max(tune_params["block_size_x"]))))
 
 #x = numpy.random.rand(size).astype(numpy.float32)
 x = numpy.ones(size).astype(numpy.float32)
-print x
+#print(x)
 
 prefix_sums = numpy.zeros(size).astype(numpy.float32)
 block_carry = numpy.zeros(max_blocks).astype(numpy.float32)
@@ -24,7 +25,7 @@ n = numpy.int32(size)
 args = [prefix_sums, block_carry, x, n]
 
 params = dict()
-params["block_size_x"] = 64
+params["block_size_x"] = 32
 
 #call the first kernel that computes the incomplete prefix sums
 #and outputs the block carry values
@@ -33,8 +34,15 @@ result = run_kernel("prefix_sum_block", kernel_string,
     grid_div_x=["block_size_x"])
 
 prefix_sums = result[0]
-print result[0]
-print result[1]
+print(result[0])
+print(result[1])
+
+answer = [result[0], result[1], None, None]
+
+res, _ = tune_kernel("prefix_sum_block", kernel_string,
+    problem_size, args, tune_params, answer=answer, verbose=True)
+
+
 
 block_filler = numpy.zeros(max_blocks).astype(numpy.float32)
 block_out = numpy.zeros(max_blocks).astype(numpy.float32)
@@ -51,8 +59,8 @@ result = run_kernel("prefix_sum_block", kernel_string,
     grid_div_x=[])
 
 block_carry = result[0]
-print result[0]
-print result[1]
+print(result[0])
+print(result[1])
 
 args = [prefix_sums, block_carry, n]
 
@@ -62,4 +70,4 @@ result = run_kernel("propagate_block_carry", kernel_string,
     problem_size, args, params,
     grid_div_x=["block_size_x"])
 
-print result[0]
+print(result[0])

@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+#ifndef use_asm
+#define use_asm 1
+#endif
+
 #ifndef block_size_x
 #define block_size_x 256
 #endif
@@ -7,17 +11,42 @@
 __device__ __forceinline__ float prefix_sum_warp(float v, int end) {
     float x = v;
 
+#if use_asm == 1
     asm("{                  \n\t"
         "  .reg .f32  t;    \n\t"
         "  .reg .pred p;    \n\t");
 
     #pragma unroll
     for (unsigned int d=1; d<end; d*=2) {
-        asm("shfl.up.b32 t|p, %0, %1, 0x0;  \n\t"
-            "@p add.f32 %0, %0, t;          \n\t" : "+f"(x) : "r"(d));
+        asm("shfl.sync.up.b32 t|p, %0, %1, 0, 0xffffffff;  \n\t"
+            "@p add.f32 %0, %0, t;                  \n\t" : "+f"(x) : "r"(d));
     }
 
     asm("}");
+
+#else
+
+/*
+    int laneid = threadIdx.x & (32-1);
+    float val = 0.0f;
+
+    for (unsigned int d=1; d<end; d*=2) { // d = {1, 2, 4, 8, 16}
+        x += __shfl_up_sync(~(d-1U), x, d); // this doesn't work I suspect the thread still adds its own value of x
+    }
+*/
+
+    int laneid = threadIdx.x & (32-1);
+    float val = 0.0f;
+
+    for (unsigned int d=1; d<end; d*=2) { // d = {1, 2, 4, 8, 16}
+        val = __shfl_up_sync(0xffffffff, x, d);
+        if (laneid >= d) {
+            x += val;
+        }
+    }
+
+#endif
+
 
     return x;
 }
